@@ -1,0 +1,63 @@
+.common-header {
+  height: 5vh;
+  width: 95vw;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2vh 0 0 1vw;
+  padding: 0 1vw;
+  backdrop-filter: blur(0.5vh);
+  border-radius: 5vh;
+  box-shadow: 0.3vh 0.3vh 0.8vh rgba(0, 0, 0, 0.3);
+  transition: background 0.5s ease-in-out;
+  z-index: 99;
+}
+.common-header:hover {
+  background: rgba(255, 255, 255, 0.8) !important;
+}
+.header-logo {
+  font-size: 2.5vh;
+  font-weight: 200;
+  transition: 0.5s opacity ease-in-out;
+}
+.header-nav-container {
+  display: inline-flex;
+  margin-right: calc(20vh / 2);
+  font-size: 2vh;
+  font-weight: 200;
+  white-space: nowrap;
+}
+.header-nav-item {
+  position: relative;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.header-nav-underline {
+  position: absolute;
+  bottom: 0;
+  width: 0px;
+  align-self: center;
+  border-top: 0.1vh solid black;
+  transition: 0.3s ease-in-out;
+}
+.header-nav-item:hover .header-nav-underline {
+  width: 70% !important;
+}
+.header-menu-container {
+  display: flex;
+  justify-content: center;
+  width: 4.5vh;
+  height: 4.5vh;
+}
+.header-menu-icon {
+  width: 3.5vh;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+.header-menu-icon:hover {
+  width: 4.5vh;
+}
