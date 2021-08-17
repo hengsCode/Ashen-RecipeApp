@@ -1,0 +1,94 @@
+.accordion-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3vh;
+  padding: 3vh;
+  border-radius: 3vh;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.accordion-header {
+  font-size: 4vh;
+  text-transform: capitalize;
+  margin: auto;
+}
+.dd-container {
+  display: flex;
+  margin: 3vh auto 0;
+  max-height: 25vh;
+  transition: max-height 0.5s ease-in-out;
+  overflow: hidden;
+}
+.dd-content {
+  display: grid;
+  grid-template-columns: repeat(4, 30vh);
+  margin: 0 auto 2vh;
+  row-gap: 5vh;
+}
+.dd-item {
+  position: relative;
+  height: 20vh;
+  /* width: 10vw; */
+  margin: auto;
+  display: flex;
+  border: solid 1px black;
+  cursor: pointer;
+}
+.dd-item:hover .dd-img {
+  opacity: 0.7;
+}
+.dd-img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  /* delete  */
+  width: 20vh;
+  height: 20vh;
+  /* delete */
+  opacity: 0.3;
+  transition: opacity 0.5s ease-in-out;
+}
+.dd-label {
+  position: absolute;
+  display: flex;
+  width: 90%;
+  height: 100%;
+  padding: 0 5%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2.5vh;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+.dd-button-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 3vh;
+}
+.dd-button {
+  padding: 0.3vh;
+  left: calc(50% - 3vw);
+  width: 6vw;
+  position: absolute;
+  text-align: center;
+  font-size: 1.5vh;
+  font-weight: 400;
+  border-radius: 3vh;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(0, 0, 0, 1);
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+.dd-button:hover {
+  color: rgba(0, 0, 0, 1);
+  background-color: rgba(200, 200, 200, 1);
+}
+.dd-button-line {
+  left: calc(50% - 20vw);
+  top: 50%;
+  position: absolute;
+  border-top: solid 0.15vh black;
+  width: 40vw;
+}

@@ -2,14 +2,21 @@ import { React, useState, useEffect } from "react";
 import "./styles.css";
 import { Search } from "@material-ui/icons";
 import VanillaTilt from "vanilla-tilt";
+import { useHistory } from "react-router-dom";
 
 const HomeSearch = () => {
   const [search, setSearch] = useState("");
+  const history = useHistory();
+
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
+
   const handleSubmit = () => {
-    console.log("Submitted!");
+    history.push({
+      pathname: `/recipe/${search}`,
+      state: { filter: search, type: "search" },
+    });
   };
 
   useEffect(() => {

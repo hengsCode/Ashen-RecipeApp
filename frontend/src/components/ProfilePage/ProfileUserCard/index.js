@@ -12,7 +12,7 @@ const ProfileUserCard = (props) => {
           <div className="user-button-container">
             <div className="user-button">
               <LibraryBooks class="user-collection-icon" />
-              My Collection
+              Completed
             </div>
             <div className="user-button">
               <BookmarkBorder class="user-collection-icon" />

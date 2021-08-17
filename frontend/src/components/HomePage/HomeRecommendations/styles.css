@@ -19,14 +19,14 @@
   font-size: 1.5vh;
   font-weight: 400;
   border-radius: 3vh;
-  color: rgba(0, 0, 0, 0.6);
-  background: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(0, 0, 0, 1);
   cursor: pointer;
   transition: 0.5s ease-in-out;
 }
 .home-recommendations-button:hover {
-  color: rgba(255, 255, 255, 1);
-  background: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 1);
+  background-color: rgba(200, 200, 200, 1);
 }
 .home-recommendations-grid {
   display: grid;
@@ -58,4 +58,5 @@
   width: 33vh;
   height: 33vh;
   margin: auto;
+  border: solid 0.1vh white;
 }

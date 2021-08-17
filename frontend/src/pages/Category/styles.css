@@ -1,0 +1,10 @@
+.category-page-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.category-page-content {
+  display: flex;
+  flex-direction: column;
+  margin: 9vh;
+}

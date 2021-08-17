@@ -46,7 +46,6 @@ const HomeRecommendations = () => {
         </div>
         <div className="home-recommendations-grid">
           {recipeList.map((recipe, index) => {
-            console.log(recipe);
             return (
               <div className="recipe-card-container">
                 <RecipeCard recipe={recipe} />

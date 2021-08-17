@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const axios = require("axios");
-const { firebase, db } = require("../../firebase");
+const { db } = require("../../firebase");
 require("dotenv").config();
 // get recipes
 const url = process.env.API_URL;
@@ -55,16 +54,53 @@ router.get("/recipes/completed", async (req, res) => {
 router.get("/recipes/all", async (req, res) => {
   await recipeRef
     .get()
-    .then((querySnapshots) => {
+    .then((querySnapshot) => {
       const recipeList = [];
-      querySnapshots.forEach((doc, index) => {
+      querySnapshot.forEach((doc, index) => {
         recipeList.push({ ...doc.data(), id: doc.id });
       });
       return recipeList;
     })
-    .then((results) => {
-      return res.json(results);
+    .then((result) => {
+      return res.json(result);
     });
+});
+
+router.get("/recipes/filtered", async (req, res) => {
+  const { filter, type } = req.query;
+  if (type === "cuisines") {
+    await recipeRef
+      .where("cuisineType", "array-contains", filter)
+      .get()
+      .then((querySnapshot) => {
+        const recipeList = [];
+        querySnapshot.forEach((doc, index) => {
+          recipeList.push({ ...doc.data(), id: doc.id });
+        });
+        return recipeList;
+      })
+      .then((result) => {
+        return res.json(result);
+      });
+  } else if (type === "search") {
+    await recipeRef
+      .get()
+      .then((querySnapshot) => {
+        const recipeList = [];
+        querySnapshot.forEach((doc, index) => {
+          if (doc.data().label.toLowerCase().includes(filter)) {
+            recipeList.push({ ...doc.data(), id: doc.id });
+          }
+        });
+        return recipeList;
+      })
+      .then((result) => {
+        return res.json(result);
+      });
+  } else {
+    console.log("Not yet implemented: \n");
+    console.log(filter, type);
+  }
 });
 
 // gets first 20 recipes
@@ -91,7 +127,7 @@ router.get("/recipes/all", async (req, res) => {
 //       healthLabels: data.healthLabels ? data.healthLabels : "",
 //       cautions: data.cautions ? data.cautions : "",
 //       ingredients: data.ingredients ? data.ingredients : "",
-//       calories: data.calories ? data.ingredients : "",
+//       calories: data.calories ? data.calories : "",
 //       time: data.totalTime ? data.totalTime : "",
 //       mealType: data.mealType ? data.mealType : "",
 //       cuisineType: data.cuisineType ? data.cuisineType : "",

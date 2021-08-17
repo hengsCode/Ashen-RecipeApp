@@ -1,0 +1,104 @@
+.recipe-view-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 92vh;
+  width: 100%;
+  position: absolute;
+  margin-top: 8vh;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.recipe-view-content {
+  display: flex;
+  flex-direction: column;
+  max-height: 90%;
+  margin: 3vh 18vw;
+  padding: 2vh 2vw;
+  background: white;
+  overflow: auto;
+}
+.recipe-view-header-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2vh;
+}
+.recipe-view-header-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.recipe-view-header-buttons-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.5vh;
+}
+.recipe-view-header-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1vh;
+}
+.recipe-view-header-button:hover .recipe-view-header-save {
+  fill: red;
+}
+.recipe-view-header-button:hover .recipe-view-header-start {
+  fill: green;
+}
+.recipe-view-header-save {
+  width: 4vh;
+}
+.recipe-view-header-start {
+  width: 4vh;
+}
+.recipe-view-header {
+  font-size: 6vh;
+  width: 100%;
+}
+.recipe-view-overview-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  font-size: 1.5vh;
+  font-weight: 300;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.recipe-view-overview-content {
+  padding: 1vh 1vw;
+  color: rgba(255, 255, 255, 1);
+}
+.recipe-view-overview-button {
+  background-color: rgba(200, 200, 200, 1);
+  padding: 1vh 1vw;
+  cursor: pointer;
+}
+.recipe-view-overview-button:hover {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.recipe-view-details-container {
+  display: flex;
+  flex-direction: row;
+  background: rgba(0, 0, 0, 0.1);
+}
+.recipe-view-img {
+  object-fit: contain;
+  width: 45vh;
+  height: 45vh;
+}
+.recipe-view-details {
+  margin: auto auto;
+  /* text-align: center; */
+}
+.recipe-view-details-header {
+  font-size: 4vh;
+  margin: 2vh 0;
+}
+.recipe-view-details-label {
+  font-size: 2vh;
+  margin: 2vh 0;
+  text-transform: capitalize;
+}

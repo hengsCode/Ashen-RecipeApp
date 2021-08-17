@@ -1,7 +1,6 @@
 .user-featuring-container {
   width: 100%;
   height: 51vh;
-  margin: 0 0 10vh;
   display: flex;
   flex-direction: column;
   background: linear-gradient(
@@ -22,6 +21,7 @@
   width: 100%;
   height: 36vh;
   background-color: rgba(244, 244, 244, 0.5);
+
   overflow: hidden;
 }
 .featuring-carousel {

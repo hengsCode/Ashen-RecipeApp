@@ -1,0 +1,25 @@
+.recipe-list-view-container {
+  margin: 8vh 10vw;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3vh;
+  transition: opacity 0.4s ease-in-out;
+}
+.recipe-list-view-header {
+  margin: 1.5vh 0 0 4.5vw;
+  font-size: 5vh;
+  text-transform: capitalize;
+}
+.recipe-list-view-content {
+  display: grid;
+  margin: auto;
+  padding: 3vh;
+  grid-template-columns: repeat(3, 50vh);
+  row-gap: 2vh;
+}
+.recipe-list-view-item {
+  margin: auto;
+  height: 38vh;
+  width: 38vh;
+}

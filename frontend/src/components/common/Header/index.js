@@ -23,7 +23,7 @@ const Header = () => {
     history.push({ pathname: `/${header.toLowerCase()}` });
   };
 
-  let headers = ["Home", "Profile", "Recipes"];
+  let headers = ["Home", "Profile", "Categories"];
   return (
     <>
       <div

@@ -2,7 +2,7 @@ import { React } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "../redux/store";
-import { Home, Profile } from "../pages";
+import { Home, Profile, Category, Recipes } from "../pages";
 import { Header, Footer } from "../components/common";
 
 const Routes = () => {
@@ -11,8 +11,9 @@ const Routes = () => {
       <Router>
         <Header />
         <Route exact path="/home" component={Home} />
-        <Route path="/profile" component={Profile} />
-        {/* <Route path="/recipes" component ={Recipe} */}
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/categories" component={Category} />
+        <Route exact path="/recipe/:filter" component={Recipes} />
         <Footer />
       </Router>
     </Provider>

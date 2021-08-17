@@ -3,7 +3,6 @@ import "./styles.css";
 
 const RecipeCard = (props) => {
   const { recipe } = props;
-
   const imageEnlarge = (url) => {
     let indexPosition = url.length - 4;
     const newS = url.slice(0, indexPosition);
