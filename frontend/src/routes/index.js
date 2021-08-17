@@ -8,12 +8,13 @@ import { Header, Footer } from "../components/common";
 const Routes = () => {
   return (
     <Provider store={store}>
-      <Header />
       <Router>
+        <Header />
         <Route exact path="/home" component={Home} />
         <Route path="/profile" component={Profile} />
+        {/* <Route path="/recipes" component ={Recipe} */}
+        <Footer />
       </Router>
-      <Footer />
     </Provider>
   );
 };

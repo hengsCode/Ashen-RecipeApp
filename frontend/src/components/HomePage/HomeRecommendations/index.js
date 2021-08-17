@@ -1,10 +1,12 @@
-import { React, useEffect } from "react";
+import { React, useEffect, useState } from "react";
 import "./styles.css";
-import recipeList from "../../../assets/recipes";
 import { useSelector } from "react-redux";
+import RecipeCard from "../../RecipeCard";
+const axios = require("axios");
 
 const HomeRecommendations = () => {
   const { scrollY } = useSelector((state) => state.scroll);
+  const [recipeList, setRecipeList] = useState([]);
 
   useEffect(() => {
     let vh = document.querySelector(".home-contents-section").clientHeight;
@@ -18,6 +20,21 @@ const HomeRecommendations = () => {
     }
   }, [scrollY]);
 
+  useEffect(() => {
+    const fetch = async () => {
+      await axios
+        .get(`${process.env.REACT_APP_API_URL}/recipes/all`)
+        .then((response) => {
+          if (response.data) {
+            setRecipeList(response.data);
+          } else {
+            console.log("Err");
+          }
+        });
+    };
+    fetch();
+  }, []);
+
   return (
     <>
       <div className="home-recommendations-container">
@@ -29,10 +46,10 @@ const HomeRecommendations = () => {
         </div>
         <div className="home-recommendations-grid">
           {recipeList.map((recipe, index) => {
+            console.log(recipe);
             return (
               <div className="recipe-card-container">
-                <img className="recipe-card-img" src={recipe.imageURL} alt="" />
-                <div className="recipe-card-header">{recipe.name}</div>
+                <RecipeCard recipe={recipe} />
               </div>
             );
           })}

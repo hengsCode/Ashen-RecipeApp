@@ -3,47 +3,26 @@ const { inject, errorHandler } = require("express-custom-error");
 inject(); // Patch express in order to use async / await syntax
 
 // Require Dependencies
-
 const express = require("express");
-const cookieParser = require("cookie-parser");
-const cors = require("cors");
-const helmet = require("helmet");
-
-const logger = require("./util/logger");
-
-// Load .env Enviroment Variables to process.env
-
-require("mandatoryenv").load(["DB_URL", "PORT", "SECRET"]);
-
-const { PORT } = process.env;
-
+const port = process.env.PORT || 8000;
 // Instantiate an Express Application
 const app = express();
-
-// Configure Express App Instance
-app.use(express.json({ limit: "50mb" }));
-app.use(express.urlencoded({ extended: true, limit: "10mb" }));
-
-// Configure custom logger middleware
-app.use(logger.dev, logger.combined);
-
-app.use(cookieParser());
-app.use(cors());
-app.use(helmet());
-
+// const morgan = require("morgan");
+const cors = require("cors");
 // This middleware adds the json header to every response
+app.use(cors());
 app.use("*", (req, res, next) => {
   res.setHeader("Content-Type", "application/json");
   next();
 });
 
-// Assign Routes
+const { routes } = require("./routes");
 
-app.use("/", require("./routes/router.js"));
+// Assign Routes
+routes.map((route) => app.use("/", require(`./routes/${route}`)));
 
 // Handle errors
 app.use(errorHandler());
-
 // Handle not valid route
 // app.use('*', (req, res) => {
 //     res
@@ -52,4 +31,4 @@ app.use(errorHandler());
 // })
 
 // Open Server on selected Port
-app.listen(PORT, () => console.info("Server listening on port ", PORT));
+app.listen(port, () => console.info("Server listening on port ", port));

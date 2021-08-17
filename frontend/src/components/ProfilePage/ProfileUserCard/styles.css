@@ -1,0 +1,97 @@
+.user-details-container {
+  width: 90%;
+  margin: 10vh auto 0;
+  padding: 3vh;
+  display: flex;
+  flex-direction: row;
+}
+.avatar-example {
+  width: 30vh;
+  height: 35vh;
+  margin-right: 3vh;
+  display: flex;
+  flex-direction: column;
+}
+.avatar-example img {
+  object-fit: cover;
+  width: 30vh;
+  height: 30vh;
+  margin-bottom: 1vh;
+}
+.user-details {
+  padding: 1vh;
+  width: 33vw;
+  height: 28vh;
+  display: flex;
+  flex-direction: column;
+  border-right: solid 0.1vh black;
+}
+.user-name {
+  margin: auto 0;
+  font-size: 6vh;
+  font-weight: 400;
+}
+.user-about {
+  margin: auto 0;
+  width: 30vw;
+  font-size: 2vh;
+  font-weight: 200;
+  font-style: italic;
+  line-height: 3vh;
+}
+.user-button-container {
+  width: 30vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 1.5vh;
+  font-weight: 200;
+}
+.user-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5vw;
+  margin: 0.5vh;
+  border-radius: 3vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+.user-button:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.user-collection-icon {
+  width: 2vh;
+  margin-right: 0.3vw;
+  fill: white;
+}
+.user-statistics-container {
+  height: 30vh;
+  width: 35vw;
+  margin-left: 1.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-statistic-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 4vh;
+  width: 23vh;
+  height: 23vh;
+  border-radius: 3vh;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.user-statistic-label {
+  font-size: 2.5vh;
+  color: rgba(0, 0, 0, 0.5);
+}
+.user-statistic-value {
+  font-size: 7vh;
+  text-align: center;
+  margin-bottom: 1vh;
+}
