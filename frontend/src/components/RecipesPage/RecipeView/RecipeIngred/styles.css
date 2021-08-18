@@ -1,0 +1,24 @@
+.recipe-view-ingredients-header {
+  font-size: 6vh;
+}
+.recipe-view-ingredients-content {
+  /* display: grid;
+  grid-template-columns: repeat(3, 20vw); */
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 1vh;
+  height: 100%;
+  border-right: solid 0.1vh white;
+}
+.recipe-view-ingredients {
+  display: list-item;
+  list-style: inside;
+  padding: 0.5vh 1vh;
+  font-size: 1.5vh;
+}
+.recipe-ingred-visibility-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1vh;
+}

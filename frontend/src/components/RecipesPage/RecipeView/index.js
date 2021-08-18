@@ -1,4 +1,4 @@
-import { React, useEffect } from "react";
+import { React, useEffect, useState } from "react";
 import "./styles.css";
 import {
   FavoriteBorder,
@@ -6,9 +6,14 @@ import {
   CheckCircleOutline,
   CheckCircle,
 } from "@material-ui/icons";
+import RecipeInfo from "./RecipeInfo";
+import RecipeIngred from "./RecipeIngred";
+import RecipeMethod from "./RecipeMethod";
 
 const RecipeView = (props) => {
   const { recipe, handleClose } = props;
+  const [saved, setSaved] = useState(false);
+  const [status, setStatus] = useState(false);
 
   useEffect(() => {
     const container = document.querySelector(".recipe-view-container");
@@ -22,16 +27,20 @@ const RecipeView = (props) => {
       const container = document.querySelector(".recipe-view-container");
       container.style.transform = `translateY(-100%)`;
       container.style.opacity = 0;
+      const body = document.body;
+      body.style.overflow = "";
       setTimeout(handleClose, 300);
     }
   };
 
-  const imageEnlarge = (url) => {
-    let indexPosition = url.length - 4;
-    const newS = url.slice(0, indexPosition);
-    return newS + "-l.jpg";
+  const handleSave = () => {
+    setSaved(!saved);
   };
-  const largeImg = imageEnlarge(recipe.img);
+
+  const handleComplete = () => {
+    setStatus(!status);
+  };
+
   return (
     <div className="recipe-view-container" onClick={handleClick}>
       <div className="recipe-view-content">
@@ -39,13 +48,24 @@ const RecipeView = (props) => {
           <div className="recipe-view-header-content">
             <div className="recipe-view-header">{recipe.label}</div>
             <div className="recipe-view-header-buttons-container">
-              <div className="recipe-view-header-button">
-                <FavoriteBorder class="recipe-view-header-save" />
-                Save
+              <div className="recipe-view-header-button" onClick={handleSave}>
+                {saved ? (
+                  <Favorite class="recipe-view-header-save" />
+                ) : (
+                  <FavoriteBorder class="recipe-view-header-save" />
+                )}
+                {saved ? <>Saved</> : <>Save</>}
               </div>
-              <div className="recipe-view-header-button">
-                <CheckCircleOutline class="recipe-view-header-start" />
-                Start
+              <div
+                className="recipe-view-header-button"
+                onClick={handleComplete}
+              >
+                {status ? (
+                  <CheckCircle class="recipe-view-header-start" />
+                ) : (
+                  <CheckCircleOutline class="recipe-view-header-start" />
+                )}
+                {status ? <>Done</> : <>Start</>}
               </div>
             </div>
           </div>
@@ -56,26 +76,17 @@ const RecipeView = (props) => {
               {recipe.servings > 1 ? "s" : ""} |{" "}
               <strong>{recipe.calories.toFixed()}</strong> calories
             </div>
-            <div className="recipe-view-overview-button">
-              View More Information
-            </div>
+            <div className="recipe-view-overview-button">More Information</div>
           </div>
         </div>
-        <div className="recipe-view-details-container">
-          <img className="recipe-view-img" src={largeImg} alt="" />
-          <div className="recipe-view-details">
-            <div className="recipe-view-details-header">Recipe Details:</div>
-            <div className="recipe-view-details-label">
-              Contains:<strong>{` ${recipe.cautions}`}</strong>
+        <div className="recipe-view-contents-container">
+          <RecipeInfo recipe={recipe} />
+          <div className="recipe-view-instructions-container">
+            <div className="recipe-view-ingredients-container">
+              <RecipeIngred ingredients={recipe.ingredients} />
             </div>
-            <div className="recipe-view-details-label">
-              Cuisine:<strong>{` ${recipe.cuisineType}`}</strong>
-            </div>
-            <div className="recipe-view-details-label">
-              Dish Type:<strong>{` ${recipe.dishType}`}</strong>
-            </div>
-            <div className="recipe-view-details-label">
-              Meal Type:<strong>{` ${recipe.mealType}`}</strong>
+            <div className="recipe-view-method-container">
+              {recipe.methods && <RecipeMethod methods={recipe.methods} />}
             </div>
           </div>
         </div>

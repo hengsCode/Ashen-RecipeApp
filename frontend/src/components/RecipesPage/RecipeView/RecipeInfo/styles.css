@@ -1,0 +1,104 @@
+.recipe-view-details-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  background: rgba(0, 0, 0, 0.1);
+}
+.recipe-info-visibility-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1vh;
+  z-index: 100;
+}
+.recipe-view-img {
+  object-fit: contain;
+  width: 43.5vh;
+  height: 43.5vh;
+}
+.recipe-view-information-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 45vh;
+  width: 100%;
+  overflow: hidden;
+}
+.recipe-view-details {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow: hidden;
+  justify-content: space-evenly;
+  padding: 1vh 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: transform 0.5s ease-in-out;
+}
+.recipe-view-details-content {
+}
+.recipe-view-details-label {
+  font-size: 1.8vh;
+  font-weight: 200;
+}
+.recipe-view-details-values {
+  font-weight: 400;
+  text-transform: lowercase;
+  font-size: 1.5vh;
+}
+.recipe-view-nutrition-container {
+  position: relative;
+  max-height: 30vh;
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+.recipe-view-information-control {
+  position: absolute;
+  width: 3vw;
+  height: 2vh;
+  border-radius: 3vh;
+  top: -1vh;
+  left: calc(50% - 1.5vw);
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  cursor: pointer;
+}
+.recipe-view-information-control:hover {
+  background: black;
+}
+.recipe-view-drag-icon {
+  margin: -0.6vh auto;
+  height: 3vh;
+  fill: white;
+  transform: rotate(90deg);
+}
+.recipe-view-nutrition-content {
+  height: 38vh;
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: repeat(3, 9vw);
+}
+.recipe-view-nutrition-item {
+  margin: auto;
+  padding: 4vh;
+  border-radius: 3vh;
+  background-color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+  width: 5vh;
+  transition: background-color 0.3s ease-in-out;
+}
+.recipe-view-nutrition-item:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+.recipe-view-nutrition-value {
+  font-size: 3vh;
+}
+.recipe-view-nutrition-label {
+  font-size: 1.5vh;
+}

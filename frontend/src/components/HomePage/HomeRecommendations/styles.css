@@ -4,7 +4,7 @@
   background: rgba(255, 255, 255, 0.3);
   border-radius: 3vh;
   z-index: 91;
-  transition: 0.8s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 .home-recommendations-header {
   margin-bottom: 1vh;
@@ -44,12 +44,10 @@
   background: rgba(0, 0, 0, 0.8);
 }
 .home-recommendations-grid::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 3vh;
+  background: rgba(0, 0, 0, 0.7);
 }
 .home-recommendations-grid::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.8);
-  border-radius: 3vh;
 }
 .recipe-card-container {
   position: relative;

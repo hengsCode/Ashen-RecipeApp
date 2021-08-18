@@ -1,7 +1,7 @@
 body {
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, white, darkgrey);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), darkgrey);
   margin: 0;
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;

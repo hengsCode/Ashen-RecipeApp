@@ -29,7 +29,7 @@ const HomeSearch = () => {
   return (
     <>
       <div className="home-search-container">
-        <div className="home-search-header">Welcome to RecipeApp!</div>
+        <div className="home-search-header">Search for a Recipe!</div>
         <div className="home-search-bar-container">
           <input
             className="home-search-bar"

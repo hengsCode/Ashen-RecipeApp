@@ -9,14 +9,13 @@ const RecipeListView = (props) => {
   const [recipe, setRecipe] = useState("");
 
   const handleClick = (recipe) => {
+    const body = document.body;
+    body.style.overflow = "hidden";
     setModal(true);
     setRecipe(recipe);
-    // document.body.style.maxHeight = "100vh";
-    // document.body.style.overflow = "hidden";
   };
 
   const handleClose = () => {
-    console.log("he");
     setModal(!modal);
   };
 
