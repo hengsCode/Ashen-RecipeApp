@@ -39,7 +39,7 @@ const HomeRecommendations = () => {
     <>
       <div className="home-recommendations-container">
         <div className="home-recommendations-header">
-          Recipes you might like...
+          Recipes You Should Try
         </div>
         <div className="home-recommendations-button">
           View all recommendations

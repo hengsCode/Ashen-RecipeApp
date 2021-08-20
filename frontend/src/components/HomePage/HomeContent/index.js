@@ -9,7 +9,7 @@ const HomeContent = () => {
   return (
     <>
       <div className="home-contents-container">
-        <div className="home-contents-section">
+        <div className="home-search-section">
           <HomeSearch />
         </div>
         <div className="home-contents-section">

@@ -1,0 +1,93 @@
+.accordion-container {
+  padding: 3vh;
+  margin: auto;
+  margin-bottom: 4vh;
+}
+.accordion-header {
+  font-size: 4vh;
+  color: var(--primary);
+  text-transform: capitalize;
+  text-align: center;
+}
+.dd-container {
+  display: grid;
+  place-items: center;
+  max-height: 32vh;
+  transition: max-height 0.5s ease-in-out;
+  overflow: hidden;
+  margin: 2.5vh 0 2vh;
+}
+.dd-content {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(4, 32vh);
+  row-gap: 4vh;
+}
+.dd-item {
+  position: relative;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.dd-item:hover .dd-img {
+  opacity: 0.7;
+}
+.dd-img {
+  width: 28vh;
+  height: 28vh;
+  opacity: 0.3;
+  background-color: var(--primary-fade);
+  transition: opacity 0.5s ease-in-out;
+}
+.dd-label {
+  position: absolute;
+  font-size: 2.5vh;
+  font-weight: 200;
+  text-transform: capitalize;
+}
+.dd-button-container {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.dd-button {
+  padding: 0 1.5vh;
+  width: fit-content;
+  position: absolute;
+  font-size: 1.5vh;
+  border-radius: 3vh;
+  font-weight: 200;
+  background-color: rgba(200, 200, 200, 1);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.dd-button:hover {
+  color: white;
+  background-color: var(--primary);
+}
+.dd-button-line {
+  position: absolute;
+  border-top: solid 0.15vh rgba(200, 200, 200, 1);
+  width: 30.5vw;
+}
+
+@media screen and (max-width: 1850px) {
+  .dd-content {
+    grid-template-columns: repeat(3, 35vh);
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .dd-content {
+    grid-template-columns: repeat(2, 30vh);
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .dd-content {
+    grid-template-columns: repeat(1, 20vh);
+  }
+  .accordion-container {
+    padding: 3vh 0;
+  }
+}

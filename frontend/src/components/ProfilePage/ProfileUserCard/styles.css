@@ -1,13 +1,12 @@
 .user-details-container {
-  width: 90%;
-  margin: 8vh auto 0;
+  margin-top: 8vh;
   padding: 3vh;
   display: flex;
   flex-direction: row;
 }
 .avatar-example {
   width: 30vh;
-  height: 35vh;
+  height: 30vh;
   margin-right: 3vh;
   display: flex;
   flex-direction: column;
@@ -24,8 +23,8 @@
   height: 28vh;
   display: flex;
   flex-direction: column;
-  border-right: solid 0.1vh black;
-  color: lightgrey;
+  border-right: solid 0.1vh white;
+  color: rgba(255, 255, 255, 0.8);
 }
 .user-name {
   margin: auto 0;
@@ -55,21 +54,25 @@
   padding: 0.5vw;
   margin: 0.5vh;
   border-radius: 3vh;
-  color: black;
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  color: white;
+  background-color: black;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   cursor: pointer;
 }
 .user-button:hover {
-  color: rgba(0, 0, 0, 1);
-  background-color: rgba(255, 255, 255, 1);
+  color: black;
+  background-color: white;
+}
+.user-button:hover .user-collection-icon {
+  fill: black;
 }
 .user-collection-icon {
   width: 2vh;
   margin-right: 0.3vw;
-  fill: black;
-  transition: fill 0.5s ease-in-out;
+  fill: white;
+  transition: fill 0.3s ease-in-out;
 }
+
 .user-statistics-container {
   height: 30vh;
   width: 35vw;
@@ -91,10 +94,11 @@
 }
 .user-statistic-label {
   font-size: 2.5vh;
+  color: var(--primary);
 }
 .user-statistic-value {
   font-size: 7vh;
   text-align: center;
   margin-bottom: 1vh;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
 }

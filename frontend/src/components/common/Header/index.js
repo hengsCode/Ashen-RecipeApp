@@ -23,19 +23,23 @@ const Header = () => {
     history.push({ pathname: `/${header.toLowerCase()}` });
   };
 
-  let headers = ["Home", "Profile", "Categories"];
+  let headers = ["Home", "Categories", "Profile"];
   return (
     <>
       <div
         className="common-header"
         style={{
-          background:
-            scrollY !== 0
-              ? "rgba(255, 255, 255, 0.4)"
-              : "rgba(255, 255, 255, 0.8)",
+          background: scrollY !== 0 ? "var(--primary-fade)" : "var(--primary)",
         }}
       >
-        <div className="header-logo">RecipeApp</div>
+        <div className="header-logo">
+          <img
+            className="header-logo-img"
+            src="https://image.flaticon.com/icons/png/512/2729/2729063.png"
+            alt=""
+          />
+          Ashen
+        </div>
         <div className="header-nav-container">
           {headers.map((header, index) => {
             return (
@@ -54,15 +58,11 @@ const Header = () => {
                     }}
                   ></div>
                 </div>
-
-                {index !== headers.length - 1 && <>&nbsp;|&nbsp;</>}
               </>
             );
           })}
         </div>
-        <div class="header-menu-container">
-          <Menu class="header-menu-icon" />
-        </div>
+        <Menu class="header-menu-icon" />
       </div>
     </>
   );

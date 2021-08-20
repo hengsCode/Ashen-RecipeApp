@@ -1,20 +1,30 @@
 .scroll-button-container {
   position: fixed;
-  bottom: 1vh;
-  right: 1vw;
-  width: fit-content;
-  height: fit-content;
-  display: flex;
+  top: 50%;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
   z-index: 99;
+  padding: 0 1vh;
 }
 .scroll-button {
-  font-size: 1.5vh;
-  font-weight: 500;
-  margin: 0.5vh;
-  padding: 0 1vh;
-  border-radius: 5vh;
+  position: absolute;
+  left: 1vh;
+  width: 4.5vh;
+  height: 4.5vh;
+  border-radius: 50%;
+  background: rgba(200, 200, 200, 1);
+  z-index: 93;
+  transition: top 0.3s ease-in-out;
+}
+.icon {
+  width: 2.5vh;
+  padding: 1vh;
+  border-radius: 50%;
+  fill: rgb(34, 63, 89);
+  z-index: 94;
   cursor: pointer;
 }
-.scroll-button:hover {
-  background: rgba(255, 255, 255, 0.3);
+.icon:hover {
+  fill: var(--primary);
+  background-color: rgba(200, 200, 200, 0.3);
 }

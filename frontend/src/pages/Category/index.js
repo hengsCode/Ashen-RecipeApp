@@ -1,19 +1,20 @@
 import { React } from "react";
 import "./styles.css";
-import CategoryAccordion from "../../components/CategoryAccordion";
+import CategoryAccordion from "../../components/CategoryPage/CategoryAccordion";
+import CategoryHeader from "../../components/CategoryPage/CategoryHeader";
 
 const categoryTypes = [
-  {
-    label: "quick access",
-    types: [
-      { label: "quick & easy", img: "green" },
-      { label: "dairy free", img: "yellow" },
-      { label: "breakfast", img: "red" },
-      { label: "lunch", img: "lightblue" },
-      { label: "dinner", img: "grey" },
-      { label: "snack", img: "lightgreen" },
-    ],
-  },
+  // {
+  //   label: "quick access",
+  //   types: [
+  //     { label: "quick & easy", img: "green" },
+  //     { label: "dairy free", img: "yellow" },
+  //     { label: "breakfast", img: "red" },
+  //     { label: "lunch", img: "lightblue" },
+  //     { label: "dinner", img: "grey" },
+  //     { label: "snack", img: "lightgreen" },
+  //   ],
+  // },
   {
     label: "cuisines",
     types: [
@@ -62,6 +63,7 @@ const Category = () => {
   return (
     <>
       <div className="category-page-container">
+        <CategoryHeader />
         <div className="category-page-content">
           {categoryTypes.map((type, index) => {
             return <CategoryAccordion type={type} />;

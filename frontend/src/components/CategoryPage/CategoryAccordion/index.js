@@ -9,7 +9,7 @@ const CategoryAccordion = (props) => {
 
   const handleViewMore = () => {
     const dropdown = document.getElementById(`${type.label}`);
-    dropdown.style.maxHeight = `calc(${dropdown.clientHeight}px + 25vh)`;
+    dropdown.style.maxHeight = `calc(${dropdown.clientHeight}px + 32vh)`;
   };
 
   const handleClick = (filter) => {
@@ -33,12 +33,9 @@ const CategoryAccordion = (props) => {
                     handleClick(category.label);
                   }}
                 >
-                  <div
-                    className="dd-img"
-                    style={{ backgroundColor: category.img }}
-                  />
-                  {/* <img className="dd-img" src={category.img} alt="" /> */}
+                  <div className="dd-img" />
                   <div className="dd-label">{category.label}</div>
+                  {/* <img className="dd-img" src={category.img} alt="" /> */}
                 </div>
               );
             })}

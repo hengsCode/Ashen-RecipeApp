@@ -1,7 +1,6 @@
 import { React, useState, useEffect } from "react";
 import "./styles.css";
 import { Search } from "@material-ui/icons";
-import VanillaTilt from "vanilla-tilt";
 import { useHistory } from "react-router-dom";
 
 const HomeSearch = () => {
@@ -19,13 +18,6 @@ const HomeSearch = () => {
     });
   };
 
-  useEffect(() => {
-    VanillaTilt.init(document.querySelector(".home-search-container"), {
-      max: 3,
-      speed: 400,
-    });
-  }, []);
-
   return (
     <>
       <div className="home-search-container">
@@ -39,6 +31,7 @@ const HomeSearch = () => {
             onKeyDown={(e) => {
               e.key === "Enter" && handleSubmit();
             }}
+            placeholder="Find something to cook..."
           />
           <Search class="home-search-icon" />
         </div>

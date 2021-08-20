@@ -1,25 +1,49 @@
 .home-about-container {
-  margin: 10vh auto;
-  width: 90%;
-  padding: 5vh;
-  background: rgba(255, 255, 255, 0.6);
+  width: 80%;
+  padding: 2vh;
   border-radius: 3vh;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 2vh rgba(255, 255, 255, 0.4);
   z-index: 91;
   transform: translateY(100vh);
-  transition: 0.8s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 .home-about-header {
-  margin-bottom: 1vh;
   font-size: calc(100vh * 0.1);
   font-weight: 500;
+  color: var(--primary);
   text-align: center;
 }
 .home-about-content {
   font-size: 2vh;
   width: 80%;
-  margin: auto;
-  padding: 5vh;
-  border-radius: 5vh;
-  color: black;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2));
+  margin: 5vh auto;
+  padding: 1vh;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.home-about-content::-webkit-scrollbar {
+  width: 0.5vh;
+}
+.home-about-content::-webkit-scrollbar:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.home-about-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.7);
+}
+.home-about-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+@media screen and (max-width: 1900px) {
+  .home-about-content {
+    max-height: 50vh;
+    overflow-y: scroll;
+  }
+}
+@media screen and (max-width: 655px) {
+  .home-about-content {
+    max-height: 30vh;
+    overflow-y: scroll;
+  }
 }
