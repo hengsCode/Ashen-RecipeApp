@@ -1,14 +1,11 @@
 .category-page-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  display: grid;
+}
+.category-page-header {
+  margin-top: 6vh;
+  display: grid;
+  place-items: center;
 }
 .category-page-content {
-  display: flex;
-  flex-direction: column;
-  margin: 9vh;
-  width: fit-content;
   margin: auto;
-  /* margin-top: 36vh; */
-  /* background-color: rgba(121, 144, 164, 0.4); */
 }

@@ -1,7 +1,7 @@
 .common-header {
   position: fixed;
-  width: calc(100% - 8vw);
-  padding: 1vh 4vw;
+  width: calc(100% - 8vh);
+  padding: 1vh 4vh;
   backdrop-filter: blur(0.5vh);
   display: grid;
   grid-template-columns: repeat(3, calc(100% / 3));
@@ -21,7 +21,7 @@
   display: flex;
 }
 .header-logo-img {
-  margin-right: 0.5vw;
+  margin-right: 0.5vh;
   place-self: center;
   width: 3vh;
   filter: invert(1);
@@ -36,7 +36,7 @@
 }
 .header-nav-item {
   display: grid;
-  margin: 0 0.3vw;
+  margin: 0 0.5vh;
   place-items: center;
   cursor: pointer;
 }
@@ -54,7 +54,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 645px) {
+@media screen and (max-width: 750px) {
   .header-logo {
     display: none;
   }

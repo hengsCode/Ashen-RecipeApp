@@ -1,24 +1,30 @@
 .category-header-container {
-  margin: 5vh auto 2.5vh;
   height: 5vh;
-  width: 45%;
   display: grid;
   grid-template-columns: repeat(7, auto);
-  place-items: end center;
+  place-items: center;
 }
 .category-header-item {
-  font-size: 1.3vh;
+  font-size: 1.2em;
   font-weight: 300;
-  cursor: pointer;
+  white-space: nowrap;
+  padding: 0 1.5em;
   color: var(--primary);
+  cursor: pointer;
 }
 .category-header-item:hover {
   font-weight: 400;
   text-decoration: underline;
-  text-underline-offset: 0.5vh;
+  text-underline-offset: 0.5em;
 }
 .category-header-img {
-  object-fit: cover;
   width: 100%;
-  height: 40vh;
+  height: 35vh;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1000px) {
+  .category-header-img {
+    display: none;
+  }
 }

@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from "react";
 import "./styles.css";
 import ProfileUserCard from "../../components/ProfilePage/ProfileUserCard";
-import ProfileFeaturing from "../../components/ProfilePage/ProfileFeaturing";
+import ProfileCarousel from "../../components/ProfilePage/ProfileCarousel";
 
 const axios = require("axios");
 const Profile = () => {
@@ -29,7 +29,7 @@ const Profile = () => {
       <>
         <div className="profile-page-container">
           <ProfileUserCard user={user} />
-          <ProfileFeaturing user={user} />
+          <ProfileCarousel user={user} />
         </div>
       </>
     )

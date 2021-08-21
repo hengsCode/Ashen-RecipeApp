@@ -1,104 +1,96 @@
-.user-details-container {
-  margin-top: 8vh;
-  padding: 3vh;
-  display: flex;
-  flex-direction: row;
+.user-profile-container {
+  display: grid;
+  grid-template-rows: 50vh 50vh;
 }
-.avatar-example {
-  width: 30vh;
-  height: 30vh;
-  margin-right: 3vh;
-  display: flex;
-  flex-direction: column;
-}
-.avatar-example img {
-  object-fit: cover;
-  width: 30vh;
-  height: 30vh;
-  margin-bottom: 1vh;
-}
-.user-details {
-  padding: 1vh;
-  width: 33vw;
-  height: 28vh;
-  display: flex;
-  flex-direction: column;
-  border-right: solid 0.1vh white;
-  color: rgba(255, 255, 255, 0.8);
-}
-.user-name {
-  margin: auto 0;
-  font-size: 6vh;
-  font-weight: 400;
-}
-.user-about {
-  margin: auto 0;
-  width: 30vw;
-  font-size: 2vh;
+.user-profile-edit-button {
+  font-size: 1.2em;
   font-weight: 300;
-  font-style: italic;
-  line-height: 3vh;
-}
-.user-button-container {
-  width: 30vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  font-size: 1.5vh;
-  font-weight: 300;
-}
-.user-button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5vw;
-  margin: 0.5vh;
-  border-radius: 3vh;
+  padding: 0 15px;
   color: white;
-  background-color: black;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  background-color: var(--primary);
   cursor: pointer;
+  z-index: 99;
 }
-.user-button:hover {
-  color: black;
-  background-color: white;
-}
-.user-button:hover .user-collection-icon {
-  fill: black;
-}
-.user-collection-icon {
-  width: 2vh;
-  margin-right: 0.3vw;
-  fill: white;
-  transition: fill 0.3s ease-in-out;
+.user-profile-edit-button:hover {
+  color: var(--primary);
+  background-color: rgba(200, 200, 200, 1);
 }
 
-.user-statistics-container {
-  height: 30vh;
-  width: 35vw;
-  margin-left: 1.5vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.user-profile-header {
+  display: grid;
+  place-items: end;
+  background-image: url("https://cutewallpaper.org/21/coolest-steam-profile-backgrounds/Discussion-Best-Steam-profile-backgrounds-.jpg");
+  background-color: var(--primary-fade);
+  background-size: cover;
+  background-position-x: center;
+  background-repeat: no-repeat;
 }
-.user-statistic-content {
+.user-profile-content {
+  display: grid;
+  background: var(--background);
+}
+.avatar-example {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 6px solid var(--background);
+  object-fit: cover;
+}
+.user-details-outer-container {
+  display: grid;
+  place-items: center;
+  background-color: transparent;
+  margin-top: -325px;
+}
+.user-details-container {
+  height: 100%;
+  width: 800px;
+  color: var(--primary);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 4vh;
-  width: 23vh;
-  height: 23vh;
-  border-radius: 3vh;
-  background-color: rgba(255, 255, 255, 0.3);
-}
-.user-statistic-label {
-  font-size: 2.5vh;
-  color: var(--primary);
-}
-.user-statistic-value {
-  font-size: 7vh;
+  place-items: center;
   text-align: center;
-  margin-bottom: 1vh;
-  color: rgba(255, 255, 255, 0.8);
+}
+.user-name {
+  font-size: 3.5em;
+  font-weight: 500;
+}
+.user-about {
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+.user-profile-buttons-container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
+.user-profile-button {
+  padding: 0 1em;
+  margin: 30px 1.5em 50px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  place-items: center;
+  cursor: pointer;
+}
+.user-profile-button:hover .user-stat-value {
+  text-decoration: underline;
+}
+.user-stat-value {
+  font-size: 1.5em;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  margin: 0 0.5em;
+  color: rgb(0, 0, 0, 0.6);
+}
+.user-stat-label {
+  font-weight: 300;
+}
+.user-created-icon {
+  width: 1.5em;
+  filter: contrast(0.4);
+}
+.user-complete-icon {
+  width: 1.5em;
+  filter: contrast(0.4);
 }

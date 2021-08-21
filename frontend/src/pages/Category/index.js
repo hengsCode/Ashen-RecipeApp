@@ -63,7 +63,9 @@ const Category = () => {
   return (
     <>
       <div className="category-page-container">
-        <CategoryHeader />
+        <div className="category-page-header">
+          <CategoryHeader />
+        </div>
         <div className="category-page-content">
           {categoryTypes.map((type, index) => {
             return <CategoryAccordion type={type} />;

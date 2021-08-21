@@ -38,7 +38,7 @@ const Header = () => {
             src="https://image.flaticon.com/icons/png/512/2729/2729063.png"
             alt=""
           />
-          Ashen
+          Shokugeki
         </div>
         <div className="header-nav-container">
           {headers.map((header, index) => {

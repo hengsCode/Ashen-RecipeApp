@@ -3,21 +3,31 @@ import RecipeCard from "../../RecipeCard";
 import "./styles.css";
 const axios = require("axios");
 
-const ProfileFeaturing = (props) => {
+const ProfileCarousel = (props) => {
   const { user } = props;
   const [created, setCreated] = useState([]);
+  const [completed, setCompleted] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetch = async () => {
-      const response = await axios.get(
+      const createdRes = await axios.get(
         `${process.env.REACT_APP_API_URL}/recipes/created`,
         {
           params: { created: user.recipesCreated },
         }
       );
-      if (response.data) {
-        setCreated(response.data);
+      const completeRes = await axios.get(
+        `${process.env.REACT_APP_API_URL}/recipes/completed`,
+        {
+          params: { completed: user.recipesCompleted },
+        }
+      );
+      if (createdRes.data) {
+        setCreated(createdRes.data);
+        if (completeRes.data) {
+          setCompleted(completeRes.data);
+        }
         setLoading(true);
       }
     };
@@ -46,9 +56,28 @@ const ProfileFeaturing = (props) => {
             </div>
           </div>
         </div>
+        <div className="user-featuring-container">
+          <div className="user-featuring-header">Completed Recipes:</div>
+          <div className="featuring-carousel-container">
+            <div className="featuring-carousel">
+              {completed.map((recipe, index) => {
+                return (
+                  <>
+                    <div className="featuring-carousel-item">
+                      <RecipeCard recipe={recipe} />
+                    </div>
+                    <div className="featuring-carousel-item">
+                      <RecipeCard recipe={recipe} />
+                    </div>
+                  </>
+                );
+              })}
+            </div>
+          </div>
+        </div>
       </>
     )
   );
 };
 
-export default ProfileFeaturing;
+export default ProfileCarousel;

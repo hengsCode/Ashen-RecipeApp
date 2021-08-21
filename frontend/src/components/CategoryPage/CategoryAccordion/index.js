@@ -9,7 +9,7 @@ const CategoryAccordion = (props) => {
 
   const handleViewMore = () => {
     const dropdown = document.getElementById(`${type.label}`);
-    dropdown.style.maxHeight = `calc(${dropdown.clientHeight}px + 32vh)`;
+    dropdown.style.maxHeight = `calc(${dropdown.clientHeight}px + 400px)`;
   };
 
   const handleClick = (filter) => {
@@ -25,7 +25,7 @@ const CategoryAccordion = (props) => {
         <div className="accordion-header">{type.label}</div>
         <div className="dd-container" id={`${type.label}`}>
           <div className="dd-content">
-            {types.map((category, index) => {
+            {types.map((category, _) => {
               return (
                 <div
                   className="dd-item"
@@ -33,9 +33,7 @@ const CategoryAccordion = (props) => {
                     handleClick(category.label);
                   }}
                 >
-                  <div className="dd-img" />
                   <div className="dd-label">{category.label}</div>
-                  {/* <img className="dd-img" src={category.img} alt="" /> */}
                 </div>
               );
             })}

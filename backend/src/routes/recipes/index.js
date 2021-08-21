@@ -25,6 +25,7 @@ router.get("/recipes/saved", async (req, res) => {
 
 router.get("/recipes/created", async (req, res) => {
   const { created } = req.query;
+  console.log(created);
   await Promise.all(
     created.map(async (ref, index) => {
       const docRef = db.doc(ref);
@@ -43,7 +44,7 @@ router.get("/recipes/completed", async (req, res) => {
     completed.map(async (ref, index) => {
       const docRef = db.doc(ref);
       return await docRef.get().then((doc) => {
-        return doc.data();
+        return { ...doc.data(), id: doc.id };
       });
     })
   ).then((results) => {

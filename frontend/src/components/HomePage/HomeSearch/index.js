@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import "./styles.css";
 import { Search } from "@material-ui/icons";
 import { useHistory } from "react-router-dom";
@@ -23,6 +23,7 @@ const HomeSearch = () => {
       <div className="home-search-container">
         <div className="home-search-header">Search for a Recipe!</div>
         <div className="home-search-bar-container">
+          <Search class="home-search-icon" />
           <input
             className="home-search-bar"
             type="text"
@@ -33,7 +34,6 @@ const HomeSearch = () => {
             }}
             placeholder="Find something to cook..."
           />
-          <Search class="home-search-icon" />
         </div>
       </div>
     </>

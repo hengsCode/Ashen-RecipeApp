@@ -1,12 +1,17 @@
 :root {
-  --primary: rgba(19, 36, 51, 1);
+  --primary: rgb(19, 36, 51);
   --primary-fade: rgba(19, 36, 51, 0.8);
   --primary-fader: rgba(19, 36, 51, 0.5);
+  --button-color: rgb(34, 63, 89);
+  --button-hover-color: rgb(19, 36, 51);
+  --button-bg: rgb(200, 200, 200);
+  --button-hover-bg: rgba(200, 200, 200, 0.3);
+  --background: rgb(243, 243, 246);
 }
 body {
   width: 100%;
   height: 100%;
-  background-color: rgba(243, 243, 246);
+  background-color: var(--background);
   margin: 0;
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;

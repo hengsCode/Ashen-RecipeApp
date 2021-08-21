@@ -12,7 +12,7 @@
   width: 4.5vh;
   height: 4.5vh;
   border-radius: 50%;
-  background: rgba(200, 200, 200, 1);
+  background-color: var(--button-bg);
   z-index: 93;
   transition: top 0.3s ease-in-out;
 }
@@ -20,11 +20,11 @@
   width: 2.5vh;
   padding: 1vh;
   border-radius: 50%;
-  fill: rgb(34, 63, 89);
+  fill: var(--button-color);
   z-index: 94;
   cursor: pointer;
 }
 .icon:hover {
-  fill: var(--primary);
-  background-color: rgba(200, 200, 200, 0.3);
+  fill: var(--button-hover-color);
+  background-color: var(--button-hover-bg);
 }
