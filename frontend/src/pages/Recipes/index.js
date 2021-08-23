@@ -29,16 +29,12 @@ const Recipes = (props) => {
     fetch();
   }, []);
   return (
-    <>
-      <div className="recipes-page-container">
-        <RecipeListView
-          recipeList={recipeList}
-          category={
-            type === "search" ? `search results for: ${filter}` : filter
-          }
-        />
-      </div>
-    </>
+    <div className="recipes-page-content">
+      <RecipeListView
+        recipeList={recipeList}
+        category={type === "search" ? `search results for: ${filter}` : filter}
+      />
+    </div>
   );
 };
 

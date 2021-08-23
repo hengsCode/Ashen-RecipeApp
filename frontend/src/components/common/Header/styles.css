@@ -42,7 +42,7 @@
 }
 .header-nav-underline {
   border-top: 0.1vh solid white;
-  transition: width 0.5s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
 .header-nav-item:hover .header-nav-underline {
   width: 70% !important;

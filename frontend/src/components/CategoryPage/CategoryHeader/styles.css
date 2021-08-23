@@ -1,7 +1,7 @@
 .category-header-container {
   height: 5vh;
   display: grid;
-  grid-template-columns: repeat(7, auto);
+  grid-template-columns: repeat(8, auto);
   place-items: center;
 }
 .category-header-item {

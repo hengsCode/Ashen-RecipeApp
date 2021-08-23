@@ -4,17 +4,20 @@ import CategoryAccordion from "../../components/CategoryPage/CategoryAccordion";
 import CategoryHeader from "../../components/CategoryPage/CategoryHeader";
 
 const categoryTypes = [
-  // {
-  //   label: "quick access",
-  //   types: [
-  //     { label: "quick & easy", img: "green" },
-  //     { label: "dairy free", img: "yellow" },
-  //     { label: "breakfast", img: "red" },
-  //     { label: "lunch", img: "lightblue" },
-  //     { label: "dinner", img: "grey" },
-  //     { label: "snack", img: "lightgreen" },
-  //   ],
-  // },
+  {
+    label: "dietary needs",
+    types: [
+      { label: "dairy free", img: "green" },
+      { label: "gluten free", img: "yellow" },
+      { label: "vegan", img: "red" },
+      { label: "vegetarian", img: "lightblue" },
+      { label: "high-fiber", img: "lightblue" },
+      { label: "protein", img: "lightblue" },
+      { label: "low-fat", img: "lightblue" },
+      { label: "low-carb", img: "lightblue" },
+      { label: "peanut free", img: "lightblue" },
+    ],
+  },
   {
     label: "cuisines",
     types: [
@@ -39,7 +42,7 @@ const categoryTypes = [
     ],
   },
   {
-    label: "category",
+    label: "dish type",
     types: [
       { label: "biscuits and cookies", img: "lightgreen" },
       { label: "bread", img: "darkblue" },

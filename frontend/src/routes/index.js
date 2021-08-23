@@ -12,7 +12,7 @@ const Routes = () => {
         <Header />
         <Route exact path="/home" component={Home} />
         <Route exact path="/profile" component={Profile} />
-        <Route exact path="/categories" component={Category} />
+        <Route exact path="/Recipes" component={Category} />
         <Route exact path="/recipe/:filter" component={Recipes} />
         <Footer />
       </Router>

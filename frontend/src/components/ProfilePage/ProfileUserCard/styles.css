@@ -5,6 +5,7 @@
 .user-profile-edit-button {
   font-size: 1.2em;
   font-weight: 300;
+  text-transform: uppercase;
   padding: 0 15px;
   color: white;
   background-color: var(--primary);

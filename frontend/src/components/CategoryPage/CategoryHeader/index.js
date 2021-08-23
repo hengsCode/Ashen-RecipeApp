@@ -2,6 +2,7 @@ import { React } from "react";
 import "./styles.css";
 
 const categoryList = [
+  "All Recipes",
   "Quick & Easy",
   "Dairy Free",
   "Breakfast",

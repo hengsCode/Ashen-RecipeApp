@@ -1,25 +1,24 @@
 .recipe-list-view-container {
-  margin: 8vh 10vw;
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 3vh;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  margin: 5vh auto;
   transition: opacity 0.4s ease-in-out;
 }
 .recipe-list-view-header {
-  margin: 1.5vh 0 0 4.5vw;
-  font-size: 5vh;
+  font-size: 4.5em;
   text-transform: capitalize;
+  margin: 20px 0;
 }
 .recipe-list-view-content {
   display: grid;
-  margin: auto;
-  padding: 3vh;
-  grid-template-columns: repeat(3, 50vh);
+  grid-template-columns: repeat(4, 450px);
   row-gap: 2vh;
 }
 .recipe-list-view-item {
-  margin: auto;
-  height: 38vh;
-  width: 38vh;
+  height: 400px;
+  width: 400px;
+}
+.recipe-list-view-filter-container {
+  margin: 7vh 0 0 15px;
+  transition: opacity 0.4s ease-in-out;
 }

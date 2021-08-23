@@ -1,0 +1,28 @@
+.recipe-filter-container {
+  width: 325px;
+}
+.recipe-filter-header-container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  border-bottom: solid 1px black;
+  margin: 120px 0 25px;
+}
+.recipe-filter-header {
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+.recipe-filter-submit-fab {
+  text-transform: uppercase;
+  place-self: center end;
+  padding: 0 10px;
+  color: white;
+  background-color: var(--primary);
+  cursor: pointer;
+}
+.recipe-filter-submit-fab:hover {
+  color: var(--primary);
+  background-color: rgba(200, 200, 200, 1);
+}
+.recipe-filter-list-container {
+}

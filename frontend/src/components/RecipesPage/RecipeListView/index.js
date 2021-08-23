@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import "./styles.css";
 import RecipeCard from "../../RecipeCard";
 import RecipeView from "../RecipeView";
+import RecipeFilter from "../RecipeFilter";
 
 const RecipeListView = (props) => {
   const { recipeList, category } = props;
@@ -21,6 +22,14 @@ const RecipeListView = (props) => {
 
   return (
     <>
+      <div
+        className="recipe-list-view-filter-container"
+        style={{
+          opacity: modal ? 0.3 : 1,
+        }}
+      >
+        <RecipeFilter />
+      </div>
       <div
         className="recipe-list-view-container"
         style={{
