@@ -1,38 +1,36 @@
 .home-about-container {
   width: 80%;
-  padding: 2vh;
-  border-radius: 3vh;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 2vh rgba(255, 255, 255, 0.4);
+  height: fit-content;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: var(--background);
+  box-shadow: 0 0 30px var(--primary);
   z-index: 91;
   transform: translateY(100vh);
   transition: 0.5s ease-in-out;
 }
 .home-about-header {
-  font-size: calc(100vh * 0.1);
+  font-size: 8em;
   font-weight: 500;
   color: var(--primary);
   text-align: center;
 }
 .home-about-content {
-  font-size: 2vh;
+  font-size: 1.6em;
   width: 80%;
-  margin: 5vh auto;
-  padding: 1vh;
-  color: rgba(255, 255, 255, 0.8);
+  margin: 55px auto;
+  padding: 10px;
+  color: var(--primary-fade);
 }
 
 .home-about-content::-webkit-scrollbar {
-  width: 0.5vh;
-}
-.home-about-content::-webkit-scrollbar:hover {
-  background: rgba(0, 0, 0, 0.8);
+  width: 5px;
 }
 .home-about-content::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.7);
+  background-color: var(--primary);
 }
 .home-about-content::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.8);
+  background-color: rgba(200, 200, 200, 1);
 }
 
 @media screen and (max-width: 1900px) {

@@ -13,10 +13,13 @@ const HomeRecommendations = () => {
     let container = document.querySelector(".home-recommendations-container");
     if (scrollY < vh / 2) {
       container.style.transform = "translateY(-100vh)";
+      container.style.opacity = 0;
     } else if (scrollY > vh / 2 && scrollY < vh * 1.5) {
       container.style.transform = "translateY(0)";
+      container.style.opacity = 1;
     } else {
       container.style.transform = "translateY(100vh)";
+      container.style.opacity = 0;
     }
   }, [scrollY]);
 

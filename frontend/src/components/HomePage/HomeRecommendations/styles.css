@@ -1,57 +1,55 @@
 .home-recommendations-container {
   z-index: 91;
-  transition: 0.5s ease-in-out;
+  transition: 0.8s ease-in-out;
+  padding: 60px;
+  border-radius: 30px;
 }
 .home-recommendations-header {
-  font-size: calc(100vh * 0.08);
-  color: var(--primary);
+  font-size: 6em;
   text-align: center;
+  color: var(--primary);
 }
 .home-recommendations-button {
+  font-size: 1.2em;
+  font-weight: 300;
+  text-transform: uppercase;
   width: fit-content;
-  text-align: center;
-  margin: 0 auto;
-  padding: 0 1vh;
-  font-size: 1.5vh;
-  font-weight: 400;
-  border-radius: 3vh;
+  margin: 0 auto 30px;
+  padding: 0 15px;
+  border-radius: 30px;
   color: white;
-  cursor: pointer;
+  background-color: var(--primary);
   transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 .home-recommendations-button:hover {
-  color: black;
+  color: var(--primary);
   background-color: rgba(200, 200, 200, 1);
 }
 .home-recommendations-grid {
-  margin: 2vh auto 0;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, auto);
   row-gap: 1vh;
-  max-height: 35vh;
+  max-height: 450px;
   overflow-y: scroll;
   overflow-x: hidden;
   place-items: center;
 }
 .home-recommendations-grid::-webkit-scrollbar {
-  width: 0.5vh;
-}
-.home-recommendations-grid::-webkit-scrollbar:hover {
-  background: rgba(0, 0, 0, 0.8);
+  width: 5px;
 }
 .home-recommendations-grid::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.7);
+  background-color: var(--primary);
 }
 .home-recommendations-grid::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.8);
+  background-color: rgba(200, 200, 200, 1);
 }
 .recipe-card-container {
-  margin: 0 1vh;
+  margin: 0 10px;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 35vh;
-  height: 35vh;
+  width: 450px;
+  height: 450px;
 }
 
 @media screen and (max-width: 2320px) {
@@ -68,6 +66,6 @@
 }
 @media screen and (max-width: 800px) {
   .home-recommendations-container {
-    padding: 3vh 0;
+    padding: 30px 0;
   }
 }

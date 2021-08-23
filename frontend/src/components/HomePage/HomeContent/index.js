@@ -15,7 +15,7 @@ const HomeContent = () => {
         <div className="home-contents-section">
           <HomeRecommendations />
         </div>
-        <div className="home-contents-section">
+        <div className="home-about-section">
           <HomeAbout />
         </div>
       </div>
