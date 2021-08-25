@@ -19,6 +19,7 @@
   color: white;
   background-color: var(--primary);
   cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 .recipe-filter-submit-fab:hover {
   color: var(--primary);

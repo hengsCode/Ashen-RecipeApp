@@ -22,44 +22,36 @@ const RecipeListView = (props) => {
 
   return (
     <>
-      <div
-        className="recipe-list-view-filter-container"
-        style={{
-          opacity: modal ? 0.3 : 1,
-        }}
-      >
-        <RecipeFilter />
-      </div>
-      <div
-        className="recipe-list-view-container"
-        style={{
-          opacity: modal ? 0.3 : 1,
-        }}
-      >
-        <div className="recipe-list-view-header">{category}</div>
-        <div className="recipe-list-view-content">
-          {recipeList.map((recipe, index) => {
-            return (
-              <>
-                <div
-                  className="recipe-list-view-item"
-                  onClick={() => {
-                    handleClick(recipe);
-                  }}
-                >
-                  <RecipeCard recipe={recipe} />
-                </div>
-                <div
-                  className="recipe-list-view-item"
-                  onClick={() => {
-                    handleClick(recipe);
-                  }}
-                >
-                  <RecipeCard recipe={recipe} />
-                </div>
-              </>
-            );
-          })}
+      <div className="recipe-list-view-inner-content">
+        <div className="recipe-list-view-filter-container">
+          <RecipeFilter />
+        </div>
+        <div className="recipe-list-view-container">
+          <div className="recipe-list-view-header">{category}</div>
+          <div className="recipe-list-view-content">
+            {recipeList.map((recipe, _) => {
+              return (
+                <>
+                  <div
+                    className="recipe-list-view-item"
+                    onClick={() => {
+                      handleClick(recipe);
+                    }}
+                  >
+                    <RecipeCard recipe={recipe} />
+                  </div>
+                  <div
+                    className="recipe-list-view-item"
+                    onClick={() => {
+                      handleClick(recipe);
+                    }}
+                  >
+                    <RecipeCard recipe={recipe} />
+                  </div>
+                </>
+              );
+            })}
+          </div>
         </div>
       </div>
       {modal && <RecipeView recipe={recipe} handleClose={handleClose} />}

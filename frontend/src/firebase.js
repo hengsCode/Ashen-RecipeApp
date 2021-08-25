@@ -1,4 +1,4 @@
-const firebase = require("firebase");
+var firebase = require("firebase/firebase");
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -10,7 +10,7 @@ const firebaseConfig = {
   appId: "1:254047829622:web:39279889943482c06ae957",
   measurementId: "G-DX3HKCDR92",
 };
-
 firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 
-module.exports = { firebase };
+module.exports = { firebase, db };

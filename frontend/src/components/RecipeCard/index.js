@@ -3,7 +3,6 @@ import "./styles.css";
 
 const RecipeCard = (props) => {
   const { recipe } = props;
-  console.log(recipe);
   const imageEnlarge = (url) => {
     let indexPosition = url.length - 4;
     const newS = url.slice(0, indexPosition);
@@ -17,7 +16,9 @@ const RecipeCard = (props) => {
         <object
           className="recipe-img-fault"
           data="https://i.pinimg.com/originals/b9/f4/c2/b9f4c22a512e5399cdba6da0cd8fe8f2.png"
-        ></object>
+        >
+          {" "}
+        </object>
         <div className="recipe-description">
           <div className="recipe-label">
             {recipe.label.length > 23

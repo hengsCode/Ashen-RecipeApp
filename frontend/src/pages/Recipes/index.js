@@ -6,7 +6,6 @@ const axios = require("axios");
 
 const Recipes = (props) => {
   const { filter, type } = props.history.location.state;
-  console.log(type);
   const [recipeList, setRecipeList] = useState([]);
 
   useEffect(() => {
@@ -27,7 +26,8 @@ const Recipes = (props) => {
         });
     };
     fetch();
-  }, []);
+  }, [filter, type]);
+
   return (
     <div className="recipes-page-content">
       <RecipeListView

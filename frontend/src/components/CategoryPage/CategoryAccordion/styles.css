@@ -34,10 +34,14 @@
 .dd-item:hover {
   background-color: var(--primary-fade);
 }
+.dd-item:hover .dd-label {
+  color: var(--background);
+}
 .dd-label {
   font-size: 2em;
   font-weight: 200;
   text-transform: capitalize;
+  transition: 0.5s ease-in-out;
 }
 .dd-button-container {
   position: relative;

@@ -3,6 +3,9 @@
   grid-template-rows: 50vh 50vh;
 }
 .user-profile-edit-button {
+  position: absolute;
+  right: 0;
+  margin: 10px 10px;
   font-size: 1.2em;
   font-weight: 300;
   text-transform: uppercase;
@@ -10,7 +13,7 @@
   color: white;
   background-color: var(--primary);
   cursor: pointer;
-  z-index: 99;
+  transition: 0.3s ease-in-out;
 }
 .user-profile-edit-button:hover {
   color: var(--primary);
@@ -18,8 +21,6 @@
 }
 
 .user-profile-header {
-  display: grid;
-  place-items: end;
   background-image: url("https://cutewallpaper.org/21/coolest-steam-profile-backgrounds/Discussion-Best-Steam-profile-backgrounds-.jpg");
   background-color: var(--primary-fade);
   background-size: cover;
@@ -27,6 +28,7 @@
   background-repeat: no-repeat;
 }
 .user-profile-content {
+  position: relative;
   display: grid;
   background: var(--background);
 }

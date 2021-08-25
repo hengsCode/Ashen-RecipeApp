@@ -25,7 +25,6 @@ router.get("/recipes/saved", async (req, res) => {
 
 router.get("/recipes/created", async (req, res) => {
   const { created } = req.query;
-  console.log(created);
   await Promise.all(
     created.map(async (ref, index) => {
       const docRef = db.doc(ref);

@@ -13,4 +13,18 @@ router.get("/profile", async (req, res) => {
   });
 });
 
+router.post("/profile-edit", async (req, res) => {
+  const user = JSON.parse(req.query.user);
+  const { firstName, lastName, id, about } = user;
+  const docRef = db.collection("users").doc(user.id);
+  await docRef.set(
+    {
+      firstName: firstName,
+      lastName: lastName,
+      about: about,
+    },
+    { merge: true }
+  );
+});
+
 module.exports = router;

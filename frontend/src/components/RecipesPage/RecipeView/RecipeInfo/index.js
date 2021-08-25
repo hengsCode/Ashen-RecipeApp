@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { DragIndicator, Visibility, VisibilityOff } from "@material-ui/icons";
+import { DragIndicator } from "@material-ui/icons";
 import "./styles.css";
 
 const nutritionList = [
@@ -41,13 +41,25 @@ const RecipeInfo = (props) => {
   };
 
   return (
-    <div className="recipe-view-details-container">
-      <img className="recipe-view-img" src={imageEnlarge(recipe.img)} alt="" />
+    <>
+      <div className="recipe-view-details-container">
+        <div className="recipe-view-overview-content">
+          <strong>{recipe.time}min</strong> cook |{" "}
+          <strong>{recipe.servings}</strong> serving
+          {recipe.servings > 1 ? "s" : ""} |{" "}
+          <strong>{recipe.calories.toFixed()}</strong> calories
+        </div>
+        <img
+          className="recipe-view-img"
+          src={imageEnlarge(recipe.img)}
+          alt=""
+        />
+      </div>
       <div className="recipe-view-information-container">
         <div className="recipe-view-details">
           <div className="recipe-view-details-content">
             <div className="recipe-view-details-label">Contains:</div>
-            {recipe.cautions.map((caution, index) => {
+            {recipe.cautions.map((caution, _) => {
               return (
                 <div className="recipe-view-details-values">{caution}</div>
               );
@@ -55,7 +67,7 @@ const RecipeInfo = (props) => {
           </div>
           <div className="recipe-view-details-content">
             <div className="recipe-view-details-label">Cuisine:</div>
-            {recipe.cuisineType.map((cuisine, index) => {
+            {recipe.cuisineType.map((cuisine, _) => {
               return (
                 <div className="recipe-view-details-values">{cuisine}</div>
               );
@@ -63,13 +75,13 @@ const RecipeInfo = (props) => {
           </div>
           <div className="recipe-view-details-content">
             <div className="recipe-view-details-label">Dish Type:</div>
-            {recipe.dishType.map((dish, index) => {
+            {recipe.dishType.map((dish, _) => {
               return <div className="recipe-view-details-values">{dish}</div>;
             })}
           </div>
           <div className="recipe-view-details-content">
             <div className="recipe-view-details-label">Meal Type:</div>
-            {recipe.mealType.map((meal, index) => {
+            {recipe.mealType.map((meal, _) => {
               return <div className="recipe-view-details-values">{meal}</div>;
             })}
           </div>
@@ -82,7 +94,7 @@ const RecipeInfo = (props) => {
             <DragIndicator class="recipe-view-drag-icon" />
           </div>
           <div className="recipe-view-nutrition-content">
-            {nutritionList.map((nutrition, index) => {
+            {nutritionList.map((nutrition, _) => {
               return (
                 <div className="recipe-view-nutrition-item">
                   <div className="recipe-view-nutrition-value">
@@ -97,7 +109,7 @@ const RecipeInfo = (props) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

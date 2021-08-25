@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React } from "react";
 import { useSelector } from "react-redux";
 import FilterAccordion from "./FilterAccordion";
 import "./styles.css";
@@ -46,7 +46,7 @@ const RecipeFilter = () => {
         </div>
       </div>
       <div className="recipe-filter-list-container">
-        {filterList.map((filter, index) => {
+        {filterList.map((filter, _) => {
           return (
             <>
               <FilterAccordion filter={filter} />

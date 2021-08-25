@@ -38,7 +38,7 @@ const FilterAccordion = (props) => {
         {open && (
           <div className="filter-types-outer">
             <div className="filter-types-container">
-              {filter.types.map((type, index) => {
+              {filter.types.map((type, _) => {
                 return (
                   <label
                     className="filter-type"

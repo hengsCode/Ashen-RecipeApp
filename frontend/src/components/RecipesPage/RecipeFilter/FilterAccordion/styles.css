@@ -56,12 +56,12 @@ input[type="checkbox"] {
 .filter-type-checkbox {
   height: 20px;
   width: 20px;
-  background-color: var(--primary-fader);
+  background-color: var(--background-secondary);
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
 .filter-type-checkbox:hover {
-  background-color: var(--primary-fade);
+  background-color: var(--primary-fader);
 }
 .filter-type-checkbox:checked {
   background-color: var(--primary);

@@ -1,4 +1,4 @@
-import { React } from "react";
+import { React, useEffect } from "react";
 import "./styles.css";
 import CategoryAccordion from "../../components/CategoryPage/CategoryAccordion";
 import CategoryHeader from "../../components/CategoryPage/CategoryHeader";
@@ -63,6 +63,14 @@ const categoryTypes = [
 ];
 
 const Category = () => {
+  useEffect(() => {
+    document.body.style.overflow = "";
+    window.scrollTo({
+      top: 0,
+      behavior: "auto",
+    });
+  }, []);
+
   return (
     <>
       <div className="category-page-container">

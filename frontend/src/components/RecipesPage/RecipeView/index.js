@@ -17,19 +17,23 @@ const RecipeView = (props) => {
 
   useEffect(() => {
     const container = document.querySelector(".recipe-view-container");
+    const modal = document.querySelector(".recipe-view-content");
     container.style.transform = `translateY(${window.scrollY}px)`;
-    container.style.opacity = 1;
+    modal.style.transform = `translateY(0)`;
+    modal.style.opacity = 1;
   }, []);
 
   const handleClick = (e) => {
     const modal = document.querySelector(".recipe-view-content");
     if (!modal.contains(e.target)) {
       const container = document.querySelector(".recipe-view-container");
-      container.style.transform = `translateY(-100%)`;
-      container.style.opacity = 0;
+      container.style.backgroundColor = "transparent";
+      const modal = document.querySelector(".recipe-view-content");
+      modal.style.transform = "translateY(-130%)";
+      modal.style.opacity = 0.5;
       const body = document.body;
       body.style.overflow = "";
-      setTimeout(handleClose, 300);
+      setTimeout(handleClose, 500);
     }
   };
 
@@ -70,24 +74,15 @@ const RecipeView = (props) => {
             </div>
           </div>
           <div className="recipe-view-overview-container">
-            <div className="recipe-view-overview-content">
-              <strong>{recipe.time}min</strong> cook |{" "}
-              <strong>{recipe.servings}</strong> serving
-              {recipe.servings > 1 ? "s" : ""} |{" "}
-              <strong>{recipe.calories.toFixed()}</strong> calories
-            </div>
-            <div className="recipe-view-overview-button">More Information</div>
+            <RecipeInfo recipe={recipe} />
           </div>
         </div>
-        <div className="recipe-view-contents-container">
-          <RecipeInfo recipe={recipe} />
-          <div className="recipe-view-instructions-container">
-            <div className="recipe-view-ingredients-container">
-              <RecipeIngred ingredients={recipe.ingredients} />
-            </div>
-            <div className="recipe-view-method-container">
-              {recipe.methods && <RecipeMethod methods={recipe.methods} />}
-            </div>
+        <div className="recipe-view-instructions-container">
+          <div className="recipe-view-instructions-content">
+            <RecipeIngred ingredients={recipe.ingredients} />
+          </div>
+          <div className="recipe-view-instructions-content">
+            {recipe.methods && <RecipeMethod methods={recipe.methods} />}
           </div>
         </div>
       </div>

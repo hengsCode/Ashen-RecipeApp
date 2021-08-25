@@ -1,24 +1,17 @@
 .recipe-view-ingredients-header {
-  font-size: 6vh;
+  font-size: 5em;
+  color: var(--primary);
 }
 .recipe-view-ingredients-content {
-  /* display: grid;
-  grid-template-columns: repeat(3, 20vw); */
-  overflow: hidden;
-  background: rgba(0, 0, 0, 0.1);
-  padding: 1vh;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 15px 0 0 5px;
   height: 100%;
-  border-right: solid 0.1vh white;
+  color: var(--primary);
 }
 .recipe-view-ingredients {
+  font-size: 1.6em;
   display: list-item;
   list-style: inside;
-  padding: 0.5vh 1vh;
-  font-size: 1.5vh;
-}
-.recipe-ingred-visibility-icon {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 1vh;
+  padding: 10px 15px 5px 0;
 }

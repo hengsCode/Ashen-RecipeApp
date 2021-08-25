@@ -32,7 +32,7 @@ const ProfileCarousel = (props) => {
       }
     };
     fetch();
-  }, []);
+  }, [user.recipesCreated, user.recipesCompleted]);
 
   return (
     isLoading && (
@@ -41,7 +41,7 @@ const ProfileCarousel = (props) => {
           <div className="user-featuring-header">My Creations:</div>
           <div className="featuring-carousel-container">
             <div className="featuring-carousel">
-              {created.map((recipe, index) => {
+              {created.map((recipe, _) => {
                 return (
                   <>
                     <div className="featuring-carousel-item">
@@ -60,7 +60,7 @@ const ProfileCarousel = (props) => {
           <div className="user-featuring-header">Completed Recipes:</div>
           <div className="featuring-carousel-container">
             <div className="featuring-carousel">
-              {completed.map((recipe, index) => {
+              {completed.map((recipe, _) => {
                 return (
                   <>
                     <div className="featuring-carousel-item">
