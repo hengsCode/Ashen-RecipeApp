@@ -25,6 +25,9 @@ textarea {
   font-family: "Poppins", sans-serif;
   resize: none;
 }
+input[type="checkbox"] {
+  appearance: none;
+}
 ::-webkit-scrollbar {
   width: 5px;
 }

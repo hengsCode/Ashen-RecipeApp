@@ -11,6 +11,7 @@ const Profile = () => {
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
+    document.body.style.overflow = "";
     const fetch = async () => {
       // const response = await axios.get(
       //   `${process.env.REACT_APP_API_URL}/profile`

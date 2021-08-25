@@ -12,9 +12,16 @@
   transition: opacity 0.4s ease-in-out;
 }
 .recipe-list-view-header {
+  width: calc(450px * 3 + 400px);
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.recipe-list-view-label {
   font-size: 4.5em;
   text-transform: capitalize;
-  margin: 20px 0;
+  color: var(--primary);
 }
 .recipe-list-view-content {
   display: grid;

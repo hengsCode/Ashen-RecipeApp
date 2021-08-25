@@ -3,6 +3,7 @@ import "./styles.css";
 import RecipeCard from "../../RecipeCard";
 import RecipeView from "../RecipeView";
 import RecipeFilter from "../RecipeFilter";
+import RecipeSorter from "../RecipeSorter";
 
 const RecipeListView = (props) => {
   const { recipeList, category } = props;
@@ -20,6 +21,8 @@ const RecipeListView = (props) => {
     setModal(!modal);
   };
 
+  const handleSortClick = (e) => {};
+
   return (
     <>
       <div className="recipe-list-view-inner-content">
@@ -27,7 +30,10 @@ const RecipeListView = (props) => {
           <RecipeFilter />
         </div>
         <div className="recipe-list-view-container">
-          <div className="recipe-list-view-header">{category}</div>
+          <div className="recipe-list-view-header">
+            <div className="recipe-list-view-label">{category}</div>
+            <RecipeSorter handleSortClick={handleSortClick} />
+          </div>
           <div className="recipe-list-view-content">
             {recipeList.map((recipe, _) => {
               return (

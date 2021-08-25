@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import store from "../redux/store";
 import { Home, Profile, Category, Recipes } from "../pages";
 import { Header, Footer } from "../components/common";
+import RecipeStart from "../components/RecipesPage/RecipeStart";
 
 const Routes = () => {
   return (
@@ -14,6 +15,8 @@ const Routes = () => {
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/Recipes" component={Category} />
         <Route exact path="/recipe/:filter" component={Recipes} />
+        {/* need to add the recipe here */}
+        <Route exact path="/recipe-start" component={RecipeStart} />
         <Footer />
       </Router>
     </Provider>

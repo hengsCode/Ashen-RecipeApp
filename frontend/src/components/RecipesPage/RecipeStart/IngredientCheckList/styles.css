@@ -1,0 +1,97 @@
+.ingredientchecklist-container {
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+}
+.ingredientchecklist-header {
+  font-size: 4em;
+  text-transform: capitalize;
+}
+.ingredientschecklist-content {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 25px));
+  column-gap: 50px;
+  place-items: center;
+  padding: 10px 80px;
+  background-color: var(--background-secondary);
+}
+.ingredient-list-item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40px auto 35px;
+  align-items: center;
+  animation: slideIn 0.8s;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0.3;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ingredient-list-checkbox {
+  height: 20px;
+  width: 20px;
+  background-color: var(--background);
+  cursor: pointer;
+}
+.ingredient-list-checkbox:hover {
+  background-color: var(--primary-fader);
+  transition: 0.3s ease-in-out;
+}
+.ingredient-list-checkbox:checked {
+  background-color: var(--primary);
+}
+.ingredient-list-checkbox:disabled:hover {
+  background-color: var(--background);
+}
+.ingredient-list-content {
+  font-size: 1.3em;
+  text-decoration-color: var(--primary);
+  padding: 10px 0 10px 20px;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.ingredient-list-content:hover {
+  background-color: var(--primary);
+  color: var(--background);
+}
+.ingredient-list-close {
+  height: 25px;
+  width: 25px;
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+.ingredient-list-delete {
+  height: 25px;
+  width: 25px;
+  margin-left: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.7);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.ingredient-list-delete:hover {
+  fill: var(--background);
+  background-color: rgba(255, 0, 0, 1);
+}
+.ingredient-list-undo {
+  height: 22px;
+  width: 22px;
+  margin-left: 10px;
+  border-radius: 50%;
+  padding: 2px;
+  background-color: var(--primary);
+  fill: var(--background);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.ingredient-list-undo:hover {
+  background-color: var(--background-secondary);
+  fill: var(--primary);
+}

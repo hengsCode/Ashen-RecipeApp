@@ -98,7 +98,7 @@ router.get("/recipes/filtered", async (req, res) => {
         return res.json(result);
       });
   } else {
-    console.log("Not yet implemented: \n");
+    console.log("Not yet implemented:");
     console.log(filter, type);
   }
 });

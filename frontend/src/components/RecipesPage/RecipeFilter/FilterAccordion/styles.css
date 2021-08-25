@@ -50,9 +50,6 @@
   text-transform: capitalize;
   cursor: pointer;
 }
-input[type="checkbox"] {
-  appearance: none;
-}
 .filter-type-checkbox {
   height: 20px;
   width: 20px;

@@ -1,0 +1,19 @@
+.recipe-sorter-container {
+  font-size: 1.5em;
+  text-transform: capitalize;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 10px;
+  place-items: center;
+  color: var(--primary);
+}
+.recipe-sorter {
+  text-underline-offset: 4px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.recipe-sorter:hover {
+  background-color: var(--background-secondary);
+}
