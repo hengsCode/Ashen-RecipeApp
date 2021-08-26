@@ -1,11 +1,11 @@
 .home-search-container {
   border-radius: 30px;
   padding: 150px;
-  background-color: var(--primary-fader);
+  background-color: var(--primary-fade);
   transition: background-color 0.5s ease-in-out;
 }
 .home-search-container:focus-within {
-  background-color: var(--primary-fade);
+  background-color: var(--primary);
 }
 .home-search-header {
   font-size: 8em;

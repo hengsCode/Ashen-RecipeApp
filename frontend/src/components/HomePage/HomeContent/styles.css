@@ -1,17 +1,37 @@
 .home-contents-container {
+  width: 100%;
   display: grid;
   grid-template-rows: 100vh 100vh auto;
-  background: repeating-radial-gradient(var(--background), var(--primary));
+  background-size: 300%, 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgb(84, 116, 145) 0%,
+    rgb(93, 130, 163) 20%,
+    rgb(104, 141, 173) 40%,
+    rgb(113, 155, 192) 60%,
+    rgb(145, 187, 226) 80%,
+    rgb(183, 218, 248) 100%
+  );
+  animation: gradanim 4s infinite ease-in-out alternate;
+}
+
+@keyframes gradanim {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
 }
 .home-search-section {
-  background-image: url("https://www.teahub.io/photos/full/19-191749_3840x2160-healthy-fibrous-foods-wallpaper-high-resolution-food.jpg");
-  background-size: 300vh;
+  height: 100vh;
   display: grid;
   place-items: center;
   z-index: 95;
   width: 100%;
   overflow: hidden;
 }
+
 .home-contents-section {
   justify-self: center;
   display: grid;

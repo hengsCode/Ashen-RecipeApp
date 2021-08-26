@@ -6,11 +6,10 @@
   padding-top: 5vh;
 }
 .recipe-start-first {
+  height: 100vh;
   display: grid;
-  place-items: center;
   grid-template-rows: repeat(2, auto);
-  gap: 30px;
-  padding-top: 50px;
+  place-items: center;
 }
 .recipe-start-header {
   display: grid;
