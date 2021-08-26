@@ -5,4 +5,4 @@
 
 ## Included: ##
 
-<img src="/demo/s1.jpg" alt=""/>
+<img src="/demo/home.png" alt=""/>
