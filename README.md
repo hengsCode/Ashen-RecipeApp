@@ -1,4 +1,4 @@
-# Ashen-RecipeApp (ReactJS) - currently in development #
+# Ashen-RecipeApp (ReactJS) - Currently in Development #
 
 ### Install dependencies using: `yarn install` or `npm install` ###
 ### Run app using: `yarn start` or `npm start` ###
