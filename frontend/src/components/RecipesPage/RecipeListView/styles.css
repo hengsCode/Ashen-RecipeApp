@@ -6,6 +6,7 @@
   margin: auto;
 }
 .recipe-list-view-container {
+  height: fit-content;
   display: grid;
   grid-template-rows: repeat(2, auto);
   margin: 5vh auto;

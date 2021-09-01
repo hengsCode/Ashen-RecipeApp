@@ -1,13 +1,12 @@
 .recipe-view-methods-header {
-  font-size: 5em;
+  font-size: 2em;
+  font-weight: 500;
   color: var(--primary);
 }
 .recipe-view-methods-content {
   padding: 0 35px;
 }
 .recipe-method-item {
-  font-size: 1.6em;
-  font-weight: 200;
   letter-spacing: 1px;
   display: list-item;
   list-style: decimal outside;

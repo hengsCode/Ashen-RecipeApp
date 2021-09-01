@@ -5,14 +5,14 @@
   background-size: 300%, 100%;
   background-image: linear-gradient(
     120deg,
-    rgb(84, 116, 145) 0%,
-    rgb(93, 130, 163) 20%,
-    rgb(104, 141, 173) 40%,
-    rgb(113, 155, 192) 60%,
-    rgb(145, 187, 226) 80%,
-    rgb(183, 218, 248) 100%
+    rgb(174, 175, 175) 0%,
+    rgb(183, 187, 189) 20%,
+    rgb(175, 176, 177) 40%,
+    rgb(186, 191, 196) 60%,
+    rgb(181, 184, 187) 80%,
+    rgb(198, 202, 206) 100%
   );
-  animation: gradanim 4s infinite ease-in-out alternate;
+  animation: gradanim 7s infinite ease-in-out alternate;
 }
 
 @keyframes gradanim {
@@ -46,5 +46,4 @@
   min-height: 100vh;
   place-items: center;
   z-index: 95;
-  overflow: hidden;
 }

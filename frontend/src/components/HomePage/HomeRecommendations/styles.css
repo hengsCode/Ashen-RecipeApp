@@ -1,9 +1,6 @@
 .home-recommendations-container {
   z-index: 91;
   transition: 0.8s ease-in-out;
-  padding: 60px;
-  border-radius: 30px;
-  background: rgba(255, 255, 255, 0.1);
 }
 .home-recommendations-header {
   font-size: 6em;

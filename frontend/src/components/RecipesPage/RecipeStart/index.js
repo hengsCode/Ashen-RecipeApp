@@ -1,6 +1,7 @@
 import { React } from "react";
 import MethodOverview from "./MethodOverview";
 import IngredientCheckList from "./IngredientCheckList";
+import { ThumbUp, RoomService, Schedule } from "@material-ui/icons";
 import "./styles.css";
 
 const recipe = {
@@ -85,6 +86,22 @@ const recipe = {
       weight: 28.349523125,
     },
     {
+      foodId: "food_a104ppxa06d3emb272fkcab3cugd",
+      foodCategory: "Cheese",
+      image:
+        "https://www.edamam.com/food-img/f58/f588658627c59d5041e4664119829aa9.jpg",
+      text: "1 ounce freshly grated Parmesan cheese (optional)",
+      weight: 28.349523125,
+    },
+    {
+      foodId: "food_a104ppxa06d3emb272fkcab3cugd",
+      foodCategory: "Cheese",
+      image:
+        "https://www.edamam.com/food-img/f58/f588658627c59d5041e4664119829aa9.jpg",
+      text: "1 ounce freshly grated Parmesan cheese (optional)",
+      weight: 28.349523125,
+    },
+    {
       weight: 4.5,
       foodCategory: "Oils",
       foodId: "food_b1d1icuad3iktrbqby0hiagafaz7",
@@ -92,7 +109,9 @@ const recipe = {
       image: null,
     },
   ],
-  time: "60",
+  servings: 4,
+  time: 60,
+  difficulty: "easy",
   img: "https://www.edamam.com/web-img/131/131f2ad00f9e9b8c30ecd9dcfe1f9b92.jpg",
   label: "Healthy Pasta E Fagioli",
   id: "8FLJrMLSjYbUXz7KJXpT",
@@ -100,15 +119,31 @@ const recipe = {
 
 const RecipeStart = (_) => {
   //   const { recipe } = props;
+
+  const handleStart = () => {
+    const container = document.querySelector(".recipe-start-header");
+    document.documentElement.scrollTo({
+      top: container.clientHeight,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="recipe-start-background">
-      <div className="recipe-start-first">
-        <div className="recipe-start-header">
-          <img className="recipe-start-image" src={recipe.img} alt="" />
-          <div className="recipe-start-label">{recipe.label}</div>
+      <div className="recipe-start-header">
+        <img className="recipe-start-image" src={recipe.img} alt="" />
+        <div className="recipe-start-label">{recipe.label}</div>
+        <div className="recipe-start-info">
+          <ThumbUp /> {recipe.difficulty}
+          <Schedule /> {recipe.time} minutes
+          <RoomService /> {recipe.servings} serving
+          {recipe.servings > 1 && "s"}
         </div>
-        <IngredientCheckList ingredients={recipe.ingredients} />
+        <div className="recipe-start-button" onClick={handleStart}>
+          start
+        </div>
       </div>
+      <IngredientCheckList ingredients={recipe.ingredients} />
       <div className="recipe-start-second">
         <MethodOverview methods={recipe.methods} />
       </div>

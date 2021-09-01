@@ -46,14 +46,6 @@ const RecipeListView = (props) => {
                   >
                     <RecipeCard recipe={recipe} />
                   </div>
-                  <div
-                    className="recipe-list-view-item"
-                    onClick={() => {
-                      handleClick(recipe);
-                    }}
-                  >
-                    <RecipeCard recipe={recipe} />
-                  </div>
                 </>
               );
             })}

@@ -1,16 +1,15 @@
 .recipe-view-ingredients-header {
-  font-size: 5em;
+  font-size: 2em;
+  font-weight: 500;
   color: var(--primary);
 }
 .recipe-view-ingredients-content {
-  font-weight: 200;
   letter-spacing: 1px;
   padding: 15px 0 0 5px;
   height: 100%;
   color: var(--primary);
 }
 .recipe-view-ingredients {
-  font-size: 1.6em;
   display: list-item;
   list-style: inside;
   padding: 10px 15px 5px 0;

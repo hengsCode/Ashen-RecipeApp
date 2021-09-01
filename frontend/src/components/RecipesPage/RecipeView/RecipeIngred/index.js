@@ -5,7 +5,7 @@ const RecipeIngred = (props) => {
   const { ingredients } = props;
   return (
     <>
-      <div className="recipe-view-ingredients-header">Ingredients</div>
+      <div className="recipe-view-ingredients-header">Ingredients:</div>
       <div className="recipe-view-ingredients-content">
         {ingredients.map((ingredient, _) => {
           return (

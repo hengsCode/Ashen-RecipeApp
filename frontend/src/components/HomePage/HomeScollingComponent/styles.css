@@ -12,7 +12,7 @@
   width: 4.5vh;
   height: 4.5vh;
   border-radius: 50%;
-  background-color: var(--button-bg);
+  background-color: var(--background);
   z-index: 93;
   transition: top 0.3s ease-in-out;
 }
@@ -26,5 +26,5 @@
 }
 .icon:hover {
   fill: var(--button-hover-color);
-  background-color: var(--button-hover-bg);
+  background-color: var(--background-secondary);
 }

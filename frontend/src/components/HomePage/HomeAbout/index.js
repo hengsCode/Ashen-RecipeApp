@@ -43,12 +43,6 @@ const HomeAbout = () => {
           et amet incididunt nisi ea sint. Consequat incididunt consectetur sunt
           pariatur ut tempor excepteur ad aute excepteur cupidatat mollit irure
           sit.
-          <p />
-          Enim fugiat ut ullamco ea non non enim velit. Irure dolor excepteur
-          magna do anim dolor. Esse elit aute ad esse culpa sit esse adipisicing
-          sunt ea ipsum. Veniam mollit Lorem qui mollit. Sint duis cupidatat
-          minim eu eu consequat. Ipsum consequat Lorem voluptate laborum enim
-          in. Occaecat Lorem nostrud veniam do in veniam reprehenderit qui.
         </div>
       </div>
     </>

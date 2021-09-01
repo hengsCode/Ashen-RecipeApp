@@ -1,19 +1,27 @@
 import { React, useEffect, useState } from "react";
 import "./styles.css";
+import RecipeInfo from "./RecipeInfo";
+import RecipeIngred from "./RecipeIngred";
+import RecipeMethod from "./RecipeMethod";
 import {
   FavoriteBorder,
   Favorite,
   CheckCircleOutline,
   CheckCircle,
 } from "@material-ui/icons";
-import RecipeInfo from "./RecipeInfo";
-import RecipeIngred from "./RecipeIngred";
-import RecipeMethod from "./RecipeMethod";
 
 const RecipeView = (props) => {
   const { recipe, handleClose } = props;
   const [saved, setSaved] = useState(false);
   const [status, setStatus] = useState(false);
+
+  const handleSave = () => {
+    setSaved(!saved);
+  };
+
+  const handleComplete = () => {
+    setStatus(!status);
+  };
 
   useEffect(() => {
     const container = document.querySelector(".recipe-view-container");
@@ -37,52 +45,33 @@ const RecipeView = (props) => {
     }
   };
 
-  const handleSave = () => {
-    setSaved(!saved);
-  };
-
-  const handleComplete = () => {
-    setStatus(!status);
-  };
-
   return (
     <div className="recipe-view-container" onClick={handleClick}>
       <div className="recipe-view-content">
-        <div className="recipe-view-header-container">
-          <div className="recipe-view-header-content">
-            <div className="recipe-view-header">{recipe.label}</div>
-            <div className="recipe-view-header-buttons-container">
-              <div className="recipe-view-header-button" onClick={handleSave}>
-                {saved ? (
-                  <Favorite class="recipe-view-header-save" />
-                ) : (
-                  <FavoriteBorder class="recipe-view-header-save" />
-                )}
-                {saved ? <>Saved</> : <>Save</>}
-              </div>
-              <div
-                className="recipe-view-header-button"
+        <RecipeInfo recipe={recipe} />
+        <div className="recipe-view-right-content">
+          <div className="recipe-view-buttons-container">
+            {saved ? (
+              <Favorite class="recipe-view-save" onClick={handleSave} />
+            ) : (
+              <FavoriteBorder class="recipe-view-save" onClick={handleSave} />
+            )}
+            {status ? (
+              <CheckCircle class="recipe-view-start" onClick={handleComplete} />
+            ) : (
+              <CheckCircleOutline
+                class="recipe-view-start"
                 onClick={handleComplete}
-              >
-                {status ? (
-                  <CheckCircle class="recipe-view-header-start" />
-                ) : (
-                  <CheckCircleOutline class="recipe-view-header-start" />
-                )}
-                {status ? <>Done</> : <>Start</>}
-              </div>
+              />
+            )}
+          </div>
+          <div className="recipe-view-instructions-container">
+            <div className="recipe-view-instructions-content">
+              <RecipeIngred ingredients={recipe.ingredients} />
             </div>
-          </div>
-          <div className="recipe-view-overview-container">
-            <RecipeInfo recipe={recipe} />
-          </div>
-        </div>
-        <div className="recipe-view-instructions-container">
-          <div className="recipe-view-instructions-content">
-            <RecipeIngred ingredients={recipe.ingredients} />
-          </div>
-          <div className="recipe-view-instructions-content">
-            {recipe.methods && <RecipeMethod methods={recipe.methods} />}
+            <div className="recipe-view-instructions-content">
+              {recipe.methods && <RecipeMethod methods={recipe.methods} />}
+            </div>
           </div>
         </div>
       </div>

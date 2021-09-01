@@ -1,22 +1,39 @@
 import { React } from "react";
+import { useHistory } from "react-router-dom";
 import "./styles.css";
 
 const categoryList = [
-  "All Recipes",
-  "Quick & Easy",
-  "Dairy Free",
-  "Breakfast",
-  "Lunch",
-  "Dinner",
-  "Snack",
-  "Vegetarian",
+  { label: "All Recipes", filter: "all recipes", type: "all" },
+  { label: "Quick & Easy", filter: "quick & easy", type: "custom" },
+  { label: "Dairy Free", filter: "dairy-free", type: "dietary needs" },
+  { label: "Breakfast", filter: "breakfast", type: "mealType" },
+  { label: "Lunch", filter: "lunch", type: "mealType" },
+  { label: "Dinner", filter: "dinner", type: "mealType" },
+  { label: "Snack", filter: "snack", type: "mealType" },
+  { label: "Vegetarian", filter: "vegetarian", type: "dietary needs" },
 ];
 const CategoryHeader = () => {
+  const history = useHistory();
+
+  const handleClick = (category) => {
+    history.push({
+      pathname: `/recipe/${category.filter}`,
+      state: { filter: category.filter, type: category.type },
+    });
+  };
+
   return (
     <>
       <div className="category-header-container">
         {categoryList.map((category, _) => {
-          return <div className="category-header-item">{category}</div>;
+          return (
+            <div
+              className="category-header-item"
+              onClick={() => handleClick(category)}
+            >
+              {category.label}
+            </div>
+          );
         })}
       </div>
       <img

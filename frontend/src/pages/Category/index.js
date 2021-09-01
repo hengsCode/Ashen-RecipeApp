@@ -7,15 +7,15 @@ const categoryTypes = [
   {
     label: "dietary needs",
     types: [
-      { label: "dairy free", img: "green" },
-      { label: "gluten free", img: "yellow" },
+      { label: "dairy-free", img: "green" },
+      { label: "gluten-free", img: "yellow" },
       { label: "vegan", img: "red" },
       { label: "vegetarian", img: "lightblue" },
       { label: "high-fiber", img: "lightblue" },
       { label: "protein", img: "lightblue" },
       { label: "low-fat", img: "lightblue" },
       { label: "low-carb", img: "lightblue" },
-      { label: "peanut free", img: "lightblue" },
+      { label: "peanut-free", img: "lightblue" },
     ],
   },
   {

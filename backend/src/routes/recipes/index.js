@@ -82,6 +82,34 @@ router.get("/recipes/filtered", async (req, res) => {
       .then((result) => {
         return res.json(result);
       });
+  } else if (type === "mealType") {
+    await recipeRef
+      .where("mealType", "array-contains", filter)
+      .get()
+      .then((querySnapshot) => {
+        const recipeList = [];
+        querySnapshot.forEach((doc, index) => {
+          recipeList.push({ ...doc.data(), id: doc.id });
+        });
+        return recipeList;
+      })
+      .then((result) => {
+        return res.json(result);
+      });
+  } else if (type === "dietary needs") {
+    await recipeRef
+      .where("dietLabels", "array-contains", filter)
+      .get()
+      .then((querySnapshot) => {
+        const recipeList = [];
+        querySnapshot.forEach((doc, index) => {
+          recipeList.push({ ...doc.data(), id: doc.id });
+        });
+        return recipeList;
+      })
+      .then((result) => {
+        return res.json(result);
+      });
   } else if (type === "search") {
     await recipeRef
       .get()
@@ -91,6 +119,48 @@ router.get("/recipes/filtered", async (req, res) => {
           if (doc.data().label.toLowerCase().includes(filter)) {
             recipeList.push({ ...doc.data(), id: doc.id });
           }
+        });
+        return recipeList;
+      })
+      .then((result) => {
+        return res.json(result);
+      });
+  } else if (type === "all") {
+    await recipeRef
+      .get()
+      .then((querySnapshot) => {
+        const recipeList = [];
+        querySnapshot.forEach((doc, index) => {
+          recipeList.push({ ...doc.data(), id: doc.id });
+        });
+        return recipeList;
+      })
+      .then((result) => {
+        return res.json(result);
+      });
+  } else if (type === "custom") {
+    await recipeRef
+      .where("difficulty", "==", "easy")
+      .where("time", "<", 30)
+      .get()
+      .then((querySnapshot) => {
+        const recipeList = [];
+        querySnapshot.forEach((doc, index) => {
+          recipeList.push({ ...doc.data(), id: doc.id });
+        });
+        return recipeList;
+      })
+      .then((result) => {
+        return res.json(result);
+      });
+  } else if (type === "dish type") {
+    await recipeRef
+      .where("dishType", "array-contains", filter)
+      .get()
+      .then((querySnapshot) => {
+        const recipeList = [];
+        querySnapshot.forEach((doc, index) => {
+          recipeList.push({ ...doc.data(), id: doc.id });
         });
         return recipeList;
       })

@@ -1,0 +1,7 @@
+.method-overview-container {
+}
+.method-overview-header {
+  font-size: 5em;
+  text-transform: capitalize;
+  color: var(--primary);
+}
