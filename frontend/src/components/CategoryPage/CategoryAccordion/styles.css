@@ -27,6 +27,7 @@
   height: 350px;
   display: grid;
   place-items: center;
+  border-radius: 15px;
   background-color: var(--primary-fader);
   transition: 0.5s ease-in-out;
   cursor: pointer;

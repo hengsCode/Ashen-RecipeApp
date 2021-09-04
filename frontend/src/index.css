@@ -1,5 +1,11 @@
 :root {
-  --primary: rgb(19, 36, 51);
+  --primary-dark: rgb(16, 29, 41);
+  --primary-darker: rgb(10, 20, 29);
+  --primary-light: rgb(34, 64, 90);
+  --primary-lighty: rgb(64, 80, 95);
+  --primary-lighter: rgb(130, 164, 196);
+  --primary-light-ish: rgb(42, 56, 70);
+  --primary: rgb(22, 39, 54);
   --primary-fade: rgba(19, 36, 51, 0.8);
   --primary-fader: rgba(19, 36, 51, 0.5);
   --button-color: rgb(34, 63, 89);
@@ -8,6 +14,7 @@
   --button-hover-bg: rgba(200, 200, 200, 0.3);
   --background: rgb(243, 243, 246);
   --background-secondary: rgb(221, 225, 226);
+  --background-dark: rgb(227, 227, 230);
 }
 body {
   width: 100%;
@@ -15,7 +22,7 @@ body {
   background-color: var(--background);
   margin: 0;
   scroll-behavior: smooth;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

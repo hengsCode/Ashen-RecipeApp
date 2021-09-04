@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import "./styles.css";
-import { Remove, Undo, Close } from "@material-ui/icons";
+import { Remove, Undo } from "@material-ui/icons";
 
 const IngredientCheckList = (props) => {
   const { ingredients } = props;
@@ -47,55 +47,21 @@ const IngredientCheckList = (props) => {
 
   return (
     <div className="ingredientchecklist-container">
-      <div className="ingredientchecklist-header">ingredients checklist:</div>
       <div className="ingredientschecklist-content">
-        <div>
-          <div className="ingredients-list-label">
-            ingredients {`[${checklist.length}]`}
-          </div>
-          {checklist.map((index) => {
-            return (
-              <div className="ingredient-list-item">
-                <input
-                  type="checkbox"
-                  className="ingredient-list-checkbox"
-                  onChange={() => handleCheck(index)}
-                  checked={false}
-                />
-                <div
-                  className="ingredient-list-content"
-                  onClick={() => handleCheck(index)}
-                >
-                  {ingredients[index].text}
-                </div>
-                <Remove
-                  class="ingredient-list-delete"
-                  onClick={() => handleDelete(index)}
-                />
-              </div>
-            );
-          })}
-        </div>
-        <div className="ingredients-checked-deleted">
+        <div className="ingredientschecklist-inner">
           <div>
-            <div className="ingredients-list-label">
-              checked {`[${checked.length}]`}
-            </div>
-            {checked.map((index) => {
+            <div className="ingredients-list-label">ingredients</div>
+            {checklist.map((index) => {
               return (
                 <div className="ingredient-list-item">
                   <input
                     type="checkbox"
                     className="ingredient-list-checkbox"
-                    checked
                     onChange={() => handleCheck(index)}
+                    checked={false}
                   />
                   <div
                     className="ingredient-list-content"
-                    style={{
-                      textDecoration: "line-through",
-                      opacity: 0.6,
-                    }}
                     onClick={() => handleCheck(index)}
                   >
                     {ingredients[index].text}
@@ -108,37 +74,73 @@ const IngredientCheckList = (props) => {
               );
             })}
           </div>
-          <div>
-            <div className="ingredients-list-label">
-              deleted {`[${deleted.length}]`}
-            </div>
-            {deleted.map((index) => {
-              return (
-                <div className="ingredient-list-item">
-                  <input
-                    type="checkbox"
-                    className="ingredient-list-checkbox"
-                    disabled
-                    style={{ cursor: "default" }}
-                  />
-                  <div
-                    className="ingredient-list-content"
-                    style={{
-                      textDecoration: "line-through",
-                      textDecorationColor: "rgba(255, 0, 0, 0.7)",
-                      opacity: 0.3,
-                    }}
-                  >
-                    {ingredients[index].text}
-                  </div>
-                  <Undo
-                    class="ingredient-list-undo"
-                    onClick={() => handleUndo(index)}
-                  />
+          {(checked.length > 0 || deleted.length > 0) && (
+            <div className="ingredients-checked-deleted">
+              {checked.length > 0 && (
+                <div>
+                  <div className="ingredients-list-label">checked</div>
+                  {checked.map((index) => {
+                    return (
+                      <div className="ingredient-list-item">
+                        <input
+                          type="checkbox"
+                          className="ingredient-list-checkbox"
+                          checked
+                          onChange={() => handleCheck(index)}
+                        />
+                        <div
+                          className="ingredient-list-content"
+                          style={{
+                            textDecoration: "line-through",
+                            textDecorationColor: "grey",
+                            opacity: 0.6,
+                          }}
+                          onClick={() => handleCheck(index)}
+                        >
+                          {ingredients[index].text}
+                        </div>
+                        <Remove
+                          class="ingredient-list-delete"
+                          onClick={() => handleDelete(index)}
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
-              );
-            })}
-          </div>
+              )}
+              {deleted.length > 0 && (
+                <div>
+                  <div className="ingredients-list-label">deleted</div>
+                  {deleted.map((index) => {
+                    return (
+                      <div className="ingredient-list-item">
+                        <input
+                          type="checkbox"
+                          className="ingredient-list-checkbox"
+                          disabled
+                          style={{ cursor: "default" }}
+                        />
+                        <div
+                          className="ingredient-list-content"
+                          style={{
+                            textDecoration: "line-through",
+                            textDecorationColor: "grey",
+                            opacity: 0.3,
+                          }}
+                        >
+                          {ingredients[index].text}
+                        </div>
+                        <Undo
+                          class="ingredient-list-undo"
+                          onClick={() => handleUndo(index)}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>

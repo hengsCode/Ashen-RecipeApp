@@ -29,13 +29,21 @@
   font-size: 1.3em;
   display: flex;
   flex-direction: row;
+  column-gap: 10px;
   place-self: start end;
   padding: 20px 20px 0 0;
   color: var(--primary);
 }
-.recipe-view-save {
+.recipe-view-like {
   width: 1.5em;
   fill: red;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  z-index: 99;
+}
+.recipe-view-save {
+  width: 1.5em;
+  fill: var(--primary);
   transition: 0.5s ease-in-out;
   cursor: pointer;
   z-index: 99;
@@ -47,11 +55,14 @@
   cursor: pointer;
   z-index: 99;
 }
+.recipe-view-like:hover {
+  opacity: 0.6;
+}
 .recipe-view-save:hover {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 .recipe-view-start:hover {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 .recipe-view-instructions-container {
   display: grid;

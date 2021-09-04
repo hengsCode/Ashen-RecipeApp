@@ -1,0 +1,59 @@
+.method-options-container {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 101;
+}
+.method-options-icon-container {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  background-color: transparent;
+  transition: 0.5s ease-in-out;
+}
+.method-icon-label {
+  width: 70px;
+  text-align: end;
+  position: absolute;
+  color: var(--primary);
+  z-index: 100;
+  opacity: 0;
+  transform: translateX(0);
+  transition: 0.4s ease-in-out;
+  z-index: 98;
+  cursor: default;
+}
+.method-options-icon {
+  width: 30px;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--primary-dark);
+  background-color: var(--primary);
+  fill: var(--background);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  z-index: 99;
+}
+.method-options-icon:hover {
+  fill: var(--primary) !important;
+  background-color: var(--background) !important;
+}
+.method-menu-icon {
+  width: 30px;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--primary-dark);
+  background-color: var(--primary);
+  fill: var(--background);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  z-index: 99;
+}
+.method-menu-icon:hover {
+  fill: var(--background) !important;
+  background-color: var(--primary-light) !important;
+}

@@ -1,0 +1,20 @@
+.method-info-content {
+  width: 500px;
+  height: fit-content;
+}
+.method-notes-container {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: var(--primary-fader);
+  border-radius: 20px;
+}
+.method-notes-content {
+  font-size: 1.2em;
+  font-weight: 300;
+  color: var(--background);
+}
+.method-step-img {
+  width: 500px;
+  object-fit: contain;
+  border-radius: 20px;
+}

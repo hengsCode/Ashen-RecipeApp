@@ -8,13 +8,19 @@ import {
   Favorite,
   CheckCircleOutline,
   CheckCircle,
+  BookmarkBorder,
+  Bookmark,
 } from "@material-ui/icons";
 
 const RecipeView = (props) => {
   const { recipe, handleClose } = props;
+  const [liked, setLiked] = useState(false);
   const [saved, setSaved] = useState(false);
   const [status, setStatus] = useState(false);
 
+  const handleLiked = () => {
+    setLiked(!liked);
+  };
   const handleSave = () => {
     setSaved(!saved);
   };
@@ -51,10 +57,15 @@ const RecipeView = (props) => {
         <RecipeInfo recipe={recipe} />
         <div className="recipe-view-right-content">
           <div className="recipe-view-buttons-container">
-            {saved ? (
-              <Favorite class="recipe-view-save" onClick={handleSave} />
+            {liked ? (
+              <Favorite class="recipe-view-like" onClick={handleLiked} />
             ) : (
-              <FavoriteBorder class="recipe-view-save" onClick={handleSave} />
+              <FavoriteBorder class="recipe-view-like" onClick={handleLiked} />
+            )}
+            {saved ? (
+              <Bookmark class="recipe-view-save" onClick={handleSave} />
+            ) : (
+              <BookmarkBorder class="recipe-view-save" onClick={handleSave} />
             )}
             {status ? (
               <CheckCircle class="recipe-view-start" onClick={handleComplete} />

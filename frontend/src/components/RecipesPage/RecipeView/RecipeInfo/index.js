@@ -16,29 +16,37 @@ const RecipeInfo = (props) => {
       <img className="recipe-view-img" src={imageEnlarge(recipe.img)} alt="" />
       <div className="recipe-view-header">{recipe.label}</div>
       <div className="recipe-view-info">
-        <div className="recipe-view-details-content">
-          <Error />
-          {recipe.cautions.map((caution, index) => {
-            return (
-              <div className="recipe-view-details-values">
-                {caution}
-                {index !== recipe.cautions.length - 1 && ", "}
-              </div>
-            );
-          })}
-        </div>
-        <div className="recipe-view-details-content">
-          <RoomService />
-          {recipe.servings} serving{recipe.servings > 1 && "s"}
-        </div>
-        <div className="recipe-view-details-content">
-          <Schedule />
-          {recipe.time} min
-        </div>
-        <div className="recipe-view-details-content">
-          <LocalDining />
-          {recipe.calories.toFixed()} kCal
-        </div>
+        {recipe.cautions.length > 0 && (
+          <div className="recipe-view-details-content">
+            <Error />
+            {recipe.cautions.map((caution, index) => {
+              return (
+                <div className="recipe-view-details-values">
+                  {caution}
+                  {index !== recipe.cautions.length - 1 && ", "}
+                </div>
+              );
+            })}
+          </div>
+        )}
+        {recipe.servings && (
+          <div className="recipe-view-details-content">
+            <RoomService />
+            {recipe.servings} serving{recipe.servings > 1 && "s"}
+          </div>
+        )}
+        {recipe.time && (
+          <div className="recipe-view-details-content">
+            <Schedule />
+            {recipe.time} min
+          </div>
+        )}
+        {recipe.calories && (
+          <div className="recipe-view-details-content">
+            <LocalDining />
+            {recipe.calories.toFixed()} kCal
+          </div>
+        )}
       </div>
     </div>
   );

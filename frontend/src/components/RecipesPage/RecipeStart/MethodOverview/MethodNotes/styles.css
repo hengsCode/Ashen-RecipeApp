@@ -1,0 +1,29 @@
+.method-add-notes-container {
+  width: 375px;
+  margin-top: 15px;
+  padding: 15px;
+  background-color: var(--primary-fader);
+  border-radius: 20px;
+  z-index: 120;
+}
+.method-add-notes-content {
+  font-size: 1.2em;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  color: var(--background);
+}
+.method-add-notes-input {
+  font-size: 1em;
+  font-weight: 300;
+  color: var(--background);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  resize: vertical;
+  max-height: 200px;
+  min-height: 30px;
+}
+.method-add-notes-input::placeholder {
+  color: var(--background);
+}

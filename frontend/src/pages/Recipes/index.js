@@ -7,6 +7,7 @@ const axios = require("axios");
 const Recipes = (props) => {
   const { filter, type } = props.history.location.state;
   const [recipeList, setRecipeList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetch = async () => {
@@ -24,17 +25,20 @@ const Recipes = (props) => {
             console.log("ERROR");
           }
         });
+      setLoading(false);
     };
     fetch();
   }, [filter, type]);
 
   return (
-    <div className="recipes-page-content">
-      <RecipeListView
-        recipeList={recipeList}
-        category={type === "search" ? `search results for: ${filter}` : filter}
-      />
-    </div>
+    !loading && (
+      <div className="recipes-page-content">
+        <RecipeListView
+          recipeList={recipeList}
+          category={type === "search" ? `${filter}` : filter}
+        />
+      </div>
+    )
   );
 };
 

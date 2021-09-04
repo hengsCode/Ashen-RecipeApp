@@ -3,6 +3,7 @@ import MethodOverview from "./MethodOverview";
 import IngredientCheckList from "./IngredientCheckList";
 import { ThumbUp, RoomService, Schedule } from "@material-ui/icons";
 import "./styles.css";
+import RecipeScrollingComponent from "./RecipeScrollingComponent";
 
 const recipe = {
   ingredients: [
@@ -109,6 +110,30 @@ const recipe = {
       image: null,
     },
   ],
+  methods: [
+    {
+      step: "Bring a large pot to medium heat. Add the olive oil, carrots, onions and garlic. Cook 7 minutes until the carrots and other veggies are soft.",
+      img: "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=768,574",
+      notes: "You might want to leave it out for a few seconds just in case",
+    },
+    {
+      step: "Add the ground turkey with Italian seasoning, red pepper flakes, salt and pepper to the pot. Break up the meat with a spatula as it browns.",
+      img: "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2018/9/26/0/FNK_Tuscan-Chicken-Skillet_H2_s4x3.jpg.rend.hgtvcom.616.462.suffix/1537973085542.jpeg",
+      notes: "You might want to leave it to rest for a few seconds",
+    },
+    {
+      step: "Once the meat browns, add the tomato sauce, diced tomatoes with juices, chicken broth and chickpea elbow pasta. Cover and bring the pot to a boil. Once boiling, reduce to a medium simmer. Simmer for 20 minutes.",
+      img: "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=768,574",
+    },
+    {
+      step: "Remove the cover and stir to check that the pasta is cooked. Drain the canned beans, and rinse then add to the pot with the parmesan and spinach. Stir to combine. Cook another 2-3 minutes then serve!",
+      notes: "You might want to leave it to rest for a few seconds",
+    },
+    {
+      step: "Store the pasta e fagioli in the refrigerator up to 7 days or in the freezer up to 30 days.",
+      img: "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2018/12/Shakshuka-19.jpg",
+    },
+  ],
   servings: 4,
   time: 60,
   difficulty: "easy",
@@ -129,25 +154,32 @@ const RecipeStart = (_) => {
   };
 
   return (
-    <div className="recipe-start-background">
-      <div className="recipe-start-header">
-        <img className="recipe-start-image" src={recipe.img} alt="" />
-        <div className="recipe-start-label">{recipe.label}</div>
-        <div className="recipe-start-info">
-          <ThumbUp /> {recipe.difficulty}
-          <Schedule /> {recipe.time} minutes
-          <RoomService /> {recipe.servings} serving
-          {recipe.servings > 1 && "s"}
+    <>
+      <div className="recipe-start-background">
+        <div className="recipe-start-header">
+          <div className="recipe-start-inner">
+            <img className="recipe-start-image" src={recipe.img} alt="" />
+            <div className="recipe-start-label">{recipe.label}</div>
+            <div className="recipe-start-info">
+              <ThumbUp /> {recipe.difficulty}
+              <Schedule /> {recipe.time} minutes
+              <RoomService /> {recipe.servings} serving
+              {recipe.servings > 1 && "s"}
+            </div>
+            <div className="recipe-start-button" onClick={handleStart}>
+              start
+            </div>
+          </div>
         </div>
-        <div className="recipe-start-button" onClick={handleStart}>
-          start
+        <div className="recipe-start-ingreds">
+          <IngredientCheckList ingredients={recipe.ingredients} />
+        </div>
+        <div className="recipe-start-methods">
+          <MethodOverview methods={recipe.methods} />
         </div>
       </div>
-      <IngredientCheckList ingredients={recipe.ingredients} />
-      <div className="recipe-start-second">
-        <MethodOverview methods={recipe.methods} />
-      </div>
-    </div>
+      <RecipeScrollingComponent />
+    </>
   );
 };
 

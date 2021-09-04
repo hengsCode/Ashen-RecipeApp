@@ -1,16 +1,18 @@
 .home-search-container {
   border-radius: 30px;
   padding: 150px;
+  background-color: var(--primary-fader);
+  transition: 0.5s ease-in-out;
 }
-.home-search-container:focus-within .home-search-header {
-  color: var(--primary);
+.home-search-container:focus-within {
+  background-color: var(--primary-fade);
 }
 .home-search-header {
   font-size: 8em;
   text-align: center;
   margin-bottom: 30px;
-  color: var(--primary-fade);
-  transition: color 0.3s ease-in-out;
+  color: var(--background);
+  transition: 0.5s ease-in-out;
 }
 .home-search-bar-container {
   height: 4em;
@@ -23,8 +25,8 @@
   border-radius: 30px;
   box-shadow: 1px 1px 6px var(--primary);
   background-color: var(--background-secondary);
-  opacity: 0.7;
-  transition: opacity 0.3s ease-in-out;
+  opacity: 0.8;
+  transition: 0.5s ease-in-out;
 }
 .home-search-bar-container:focus-within {
   opacity: 1;

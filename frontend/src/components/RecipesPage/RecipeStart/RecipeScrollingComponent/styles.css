@@ -1,4 +1,4 @@
-.scroll-button-container {
+.recipe-start-scroll-button-container {
   position: fixed;
   top: 50%;
   display: grid;
@@ -6,17 +6,17 @@
   z-index: 99;
   padding: 0 1vh;
 }
-.scroll-button {
+.recipe-start-scroll-button {
   position: absolute;
   left: 1vh;
   width: 4.5vh;
   height: 4.5vh;
   border-radius: 50%;
-  background-color: var(--background-secondary);
+  background-color: var(--background);
   z-index: 93;
   transition: top 0.3s ease-in-out;
 }
-.icon {
+.recipe-start-icon {
   width: 2.5vh;
   padding: 1vh;
   border-radius: 50%;
@@ -25,7 +25,7 @@
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
-.icon:hover {
+.recipe-start-icon:hover {
   fill: var(--button-hover-color);
-  background-color: var(--background-secondary);
+  background-color: var(--background);
 }

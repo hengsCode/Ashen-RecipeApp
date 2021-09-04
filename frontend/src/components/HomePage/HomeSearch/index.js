@@ -12,10 +12,12 @@ const HomeSearch = () => {
   };
 
   const handleSubmit = () => {
-    history.push({
-      pathname: `/recipe/${search}`,
-      state: { filter: search, type: "search" },
-    });
+    if (search.length > 0) {
+      history.push({
+        pathname: `/recipe/${search}`,
+        state: { filter: search, type: "search" },
+      });
+    }
   };
 
   return (
